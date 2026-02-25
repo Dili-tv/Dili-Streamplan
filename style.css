@@ -111,7 +111,7 @@ input:checked + .slider:before {
   transition: 0.3s ease;
 }
 
-/* HEUTIGER TAG NEON */
+/* NEON HEUTE */
 
 .today {
   border: 2px solid #ff2ea6;
@@ -147,6 +147,7 @@ footer {
 
 .socials a {
   font-size: 28px;
+  transition: 0.3s;
 }
 
 .socials a:nth-child(1) { color: #9146FF; }
@@ -159,23 +160,8 @@ footer {
 .socials a:nth-child(4) { color: #00F2EA; }
 .socials a:nth-child(5) { color: #5865F2; }
 
-/* PAW TRAIL */
-
-.paw-trail {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  animation: fadePaw 0.5s forwards;
-  z-index: 9999;
-}
-
-@keyframes fadePaw {
-  to {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.6);
-  }
+.socials a:hover {
+  transform: translateY(-4px);
 }
 
 /* REALISTISCHE SAKURA */
@@ -183,28 +169,20 @@ footer {
 .petal {
   position: fixed;
   top: -40px;
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   pointer-events: none;
-  animation: fall linear;
   z-index: -1;
+  animation: sakuraFall linear forwards;
 }
 
-.petal::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 30% 30%, #ffe6f0 0%, #ffb6c1 60%, #ff8fb3 100%);
-  border-radius: 50%;
-  clip-path: polygon(
-    50% 0%, 65% 30%, 100% 35%,
-    75% 60%, 85% 100%, 50% 75%,
-    15% 100%, 25% 60%, 0% 35%, 35% 30%
-  );
-}
-
-@keyframes fall {
-  0% { transform: translateY(0px) rotate(0deg); }
-  100% { transform: translateY(110vh) rotate(360deg); }
+@keyframes sakuraFall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) translateX(40px) rotate(360deg);
+    opacity: 0.9;
+  }
 }
