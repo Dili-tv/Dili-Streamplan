@@ -38,3 +38,9 @@ streamplan.forEach(eintrag => {
 
   container.appendChild(card);
 });
+
+document.addEventListener("mousemove", function(e) {
+  const glow = document.querySelector(".cursor-glow");
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
+});
