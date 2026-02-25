@@ -19,13 +19,13 @@ body {
   width: 800px;
   height: 800px;
   background: radial-gradient(circle, rgba(255, 0, 128, 0.3), transparent 60%);
-  animation: moveGlow 12s infinite alternate ease-in-out;
+  animation: moveGlow 14s infinite alternate ease-in-out;
   z-index: -1;
 }
 
 @keyframes moveGlow {
   0% { transform: translate(0,0); }
-  100% { transform: translate(200px,200px); }
+  100% { transform: translate(250px,200px); }
 }
 
 /* ===== Fade In Animation ===== */
@@ -141,6 +141,8 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.05);
 }
 
+/* ===== Social Icons ===== */
+
 .socials {
   display: flex;
   justify-content: center;
@@ -149,14 +151,41 @@ footer {
 }
 
 .socials a {
-  font-size: 24px;
+  font-size: 26px;
   color: #777;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
-.socials a:hover {
-  color: #ff2e92;
-  transform: translateY(-4px);
+/* Twitch */
+.socials a:nth-child(1):hover {
+  color: #9146ff;
+  text-shadow: 0 0 12px rgba(145, 70, 255, 0.8);
+}
+
+/* Instagram */
+.socials a:nth-child(2):hover {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 14px rgba(221, 42, 123, 0.6);
+}
+
+/* YouTube */
+.socials a:nth-child(3):hover {
+  color: #ff0000;
+  text-shadow: 0 0 14px rgba(255, 0, 0, 0.7);
+}
+
+/* TikTok */
+.socials a:nth-child(4):hover {
+  color: #00f2ea;
+  text-shadow: 0 0 14px rgba(0, 242, 234, 0.8);
+}
+
+/* Discord */
+.socials a:nth-child(5):hover {
+  color: #5865F2;
+  text-shadow: 0 0 14px rgba(88, 101, 242, 0.8);
 }
 
 footer p {
