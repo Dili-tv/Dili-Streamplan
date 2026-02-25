@@ -8,18 +8,14 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
-<body class="dark">
 
-<div class="gradient-bg"></div>
-<div class="paw"></div>
+<body class="dark">
 
 <header class="hero">
   <h1>Dili</h1>
   <p class="subtitle">Streamplan</p>
 
-  <!-- iOS SWITCH -->
   <label class="switch">
     <input type="checkbox" id="modeSwitch">
     <span class="slider"></span>
@@ -43,9 +39,7 @@
 
 <script>
 
-/* =========================
-   MODE SWITCH
-========================= */
+/* ===== DARK / LIGHT MODE ===== */
 
 const switchInput = document.getElementById("modeSwitch");
 
@@ -59,32 +53,38 @@ switchInput.addEventListener("change", () => {
   }
 });
 
-/* =========================
-   PAW FOLLOW
-========================= */
+/* ===== PAW TRAIL EFFECT ===== */
 
-const paw = document.querySelector(".paw");
-
-document.addEventListener("mousemove", (e) => {
+document.addEventListener("mousemove", function(e) {
+  const paw = document.createElement("div");
+  paw.className = "paw-trail";
   paw.style.left = e.clientX + "px";
   paw.style.top = e.clientY + "px";
+  document.body.appendChild(paw);
+
+  setTimeout(() => {
+    paw.remove();
+  }, 600);
 });
 
-/* =========================
-   SAKURA PETALS
-========================= */
+/* ===== REALISTIC SAKURA ===== */
 
 function createPetal() {
   const petal = document.createElement("div");
   petal.className = "petal";
+
   petal.style.left = Math.random() * window.innerWidth + "px";
-  petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+  petal.style.animationDuration = (6 + Math.random() * 6) + "s";
+  petal.style.opacity = 0.6 + Math.random() * 0.4;
+
   document.body.appendChild(petal);
 
-  setTimeout(() => petal.remove(), 10000);
+  setTimeout(() => {
+    petal.remove();
+  }, 12000);
 }
 
-setInterval(createPetal, 600);
+setInterval(createPetal, 800);
 
 </script>
 
