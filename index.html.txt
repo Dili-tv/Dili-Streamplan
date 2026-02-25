@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Streamplan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="hero-content">
+    <h1>Streamplan</h1>
+    <p>Wann ich live bin</p>
+    <a class="twitch-btn" href="https://twitch.tv/deinkanal" target="_blank">
+      Jetzt auf Twitch ansehen
+    </a>
+  </div>
+</header>
+
+<main class="container">
+  <div id="schedule" class="schedule"></div>
+</main>
+
+<footer>
+  <p>© Dein Name</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
