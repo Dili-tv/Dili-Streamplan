@@ -110,7 +110,7 @@ input:checked + .slider:before {
   box-shadow: 0 0 25px rgba(255, 105, 199, 0.5);
 }
 
-/* ===== HEUTE HIGHLIGHT ===== */
+/* ===== HEUTE ===== */
 
 .today {
   border: 2px solid #ff69c7;
@@ -122,7 +122,7 @@ body.light .today {
   box-shadow: 0 0 20px rgba(192, 38, 211, 0.7);
 }
 
-/* ===== SOCIALS (Original Farben) ===== */
+/* ===== SOCIALS ===== */
 
 footer {
   text-align: center;
@@ -141,15 +141,15 @@ footer {
   transition: 0.3s;
 }
 
-.socials a:nth-child(1) { color: #9146FF; } /* Twitch */
+.socials a:nth-child(1) { color: #9146FF; }
 .socials a:nth-child(2) {
   background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.socials a:nth-child(3) { color: #FF0000; } /* YouTube */
-.socials a:nth-child(4) { color: #00F2EA; } /* TikTok */
-.socials a:nth-child(5) { color: #5865F2; } /* Discord */
+.socials a:nth-child(3) { color: #FF0000; }
+.socials a:nth-child(4) { color: #00F2EA; }
+.socials a:nth-child(5) { color: #5865F2; }
 
 .socials a:hover {
   transform: translateY(-4px);
@@ -177,13 +177,13 @@ footer {
   }
 }
 
-/* ===== SAKURA PETALS ===== */
+/* ===== SAKURA ===== */
 
 .petal {
   position: fixed;
   top: -40px;
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   background: radial-gradient(circle at 30% 30%, #fff0f5, #ffb6c1 70%);
   border-radius: 50% 40% 60% 50%;
   animation: fall linear;
