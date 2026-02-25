@@ -12,12 +12,12 @@ body {
 /* ===== BACKGROUND ===== */
 
 body.dark {
-  background: linear-gradient(180deg, #CD6889, #a94d6f);
+  background: #CD6889;
   color: white;
 }
 
 body.light {
-  background: linear-gradient(180deg, #ffd6eb, #ffc2e2);
+  background: #ffd6eb;
   color: #4a004e;
 }
 
@@ -34,7 +34,7 @@ body.light {
 }
 
 .subtitle {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 /* ===== SWITCH ===== */
@@ -44,7 +44,7 @@ body.light {
   display: inline-block;
   width: 60px;
   height: 34px;
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
 .switch input {
@@ -98,28 +98,21 @@ input:checked + .slider:before {
 }
 
 .card {
-  background: rgba(0,0,0,0.15)
-  backdrop-filter: blur(10px);
-  padding: 25px;
-  border-radius: 16px;
-  transition: 0.3s;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(15px);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.25);
+  transition: 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 0 25px rgba(255, 105, 199, 0.5);
 }
-
-/* ===== HEUTE ===== */
 
 .today {
-  border: 2px solid #ff69c7;
-  box-shadow: 0 0 25px rgba(255, 105, 199, 0.8);
-}
-
-body.light .today {
-  border: 2px solid #c026d3;
-  box-shadow: 0 0 20px rgba(192, 38, 211, 0.7);
+  border: 2px solid black;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
 /* ===== SOCIALS ===== */
@@ -153,17 +146,14 @@ footer {
 
 .socials a:hover {
   transform: translateY(-4px);
-  filter: brightness(1.2);
 }
 
-/* ===== PAW TRAIL ===== */
+/* ===== PAW TRAIL (SCHWARZE PFOTE) ===== */
 
 .paw-trail {
   position: fixed;
-  width: 24px;
-  height: 24px;
-  background: url("https://cdn-icons-png.flaticon.com/512/616/616408.png") no-repeat center;
-  background-size: contain;
+  width: 20px;
+  height: 20px;
   pointer-events: none;
   transform: translate(-50%, -50%);
   animation: fadePaw 0.5s forwards;
@@ -195,4 +185,3 @@ footer {
     transform: translateY(110vh) rotate(360deg);
   }
 }
-
