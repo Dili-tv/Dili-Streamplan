@@ -121,13 +121,60 @@ footer {
 }
 
 .socials a {
-  font-size: 26px;
-  transition: 0.3s;
+  font-size: 28px;
+  transition: 0.3s ease;
 }
 
-.socials a:hover {
+/* Twitch */
+.socials a:nth-child(1) {
+  color: #9146FF;
+}
+
+.socials a:nth-child(1):hover {
+  text-shadow: 0 0 12px rgba(145, 70, 255, 0.8);
   transform: translateY(-4px);
-  text-shadow: 0 0 15px #ff69c7;
+}
+
+/* Instagram */
+.socials a:nth-child(2) {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.socials a:nth-child(2):hover {
+  filter: brightness(1.2);
+  transform: translateY(-4px);
+}
+
+/* YouTube */
+.socials a:nth-child(3) {
+  color: #FF0000;
+}
+
+.socials a:nth-child(3):hover {
+  text-shadow: 0 0 12px rgba(255, 0, 0, 0.8);
+  transform: translateY(-4px);
+}
+
+/* TikTok */
+.socials a:nth-child(4) {
+  color: #00F2EA;
+}
+
+.socials a:nth-child(4):hover {
+  text-shadow: 0 0 12px rgba(0, 242, 234, 0.8);
+  transform: translateY(-4px);
+}
+
+/* Discord */
+.socials a:nth-child(5) {
+  color: #5865F2;
+}
+
+.socials a:nth-child(5):hover {
+  text-shadow: 0 0 12px rgba(88, 101, 242, 0.8);
+  transform: translateY(-4px);
 }
 
 /* ===== PAW TRAIL ===== */
@@ -169,3 +216,4 @@ footer {
     transform: translateY(110vh) rotate(360deg);
   }
 }
+
