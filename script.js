@@ -43,9 +43,8 @@ streamplan.forEach(eintrag => {
   container.appendChild(card);
 });
 
-// SCHWARZE PFOTE ALS SVG
+// SCHWARZE PFOTEN
 document.addEventListener("mousemove", function(e) {
-
   const paw = document.createElement("div");
   paw.className = "paw-trail";
 
