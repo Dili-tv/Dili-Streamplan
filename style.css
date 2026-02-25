@@ -9,40 +9,51 @@ body {
   overflow-x: hidden;
 }
 
-/* DARK MODE */
+/* ===== BACKGROUND ===== */
+
 body.dark {
   background: #CD6889;
   color: white;
 }
 
-/* LIGHT MODE */
 body.light {
   background: #ffd6eb;
   color: #4a004e;
 }
 
-/* HERO */
+/* ===== HERO ===== */
+
 .hero {
   text-align: center;
   padding: 120px 20px 60px;
 }
 
 .hero h1 {
-  font-size: 70px;
+  font-family: "Post-Antiqua", Georgia, serif;
+  font-size: 72px;
   margin: 0;
+  letter-spacing: 1px;
 }
 
 .subtitle {
-  opacity: 0.8;
+  font-size: 20px;
+  margin-top: 10px;
+  opacity: 0.85;
 }
 
-/* SWITCH */
+.switch-wrapper {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== SWITCH ===== */
+
 .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
-  margin-top: 25px;
 }
 
 .switch input {
@@ -81,7 +92,8 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* SCHEDULE */
+/* ===== SCHEDULE ===== */
+
 .schedule-wrapper {
   max-width: 800px;
   margin: auto;
@@ -95,9 +107,10 @@ input:checked + .slider:before {
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255,255,255,0.2);
   padding: 30px;
   border-radius: 20px;
+  backdrop-filter: blur(15px);
   transition: 0.3s ease;
 }
 
@@ -105,11 +118,28 @@ input:checked + .slider:before {
   transform: translateY(-4px);
 }
 
+/* ===== NEON HEUTE ===== */
+
 .today {
-  border: 2px solid black;
+  border: 2px solid #ff2ea6;
+  animation: neonPulse 1.8s infinite alternate;
 }
 
-/* SOCIALS */
+@keyframes neonPulse {
+  from {
+    box-shadow:
+      0 0 10px #ff2ea6,
+      0 0 20px #ff2ea6;
+  }
+  to {
+    box-shadow:
+      0 0 20px #ff2ea6,
+      0 0 40px #ff2ea6;
+  }
+}
+
+/* ===== SOCIALS ===== */
+
 footer {
   text-align: center;
   padding: 50px 20px;
@@ -124,6 +154,7 @@ footer {
 
 .socials a {
   font-size: 28px;
+  transition: 0.3s;
 }
 
 .socials a:nth-child(1) { color: #9146FF; }
@@ -136,7 +167,12 @@ footer {
 .socials a:nth-child(4) { color: #00F2EA; }
 .socials a:nth-child(5) { color: #5865F2; }
 
-/* PAW TRAIL */
+.socials a:hover {
+  transform: translateY(-4px);
+}
+
+/* ===== PAW TRAIL ===== */
+
 .paw-trail {
   position: fixed;
   width: 20px;
@@ -154,20 +190,21 @@ footer {
   }
 }
 
-/* SAKURA */
+/* ===== SAKURA ===== */
+
 .petal {
   position: fixed;
   top: -40px;
   width: 28px;
   height: 28px;
-  background: pink;
-  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff0f5, #ffb6c1 70%);
+  border-radius: 50% 40% 60% 50%;
   animation: fall linear;
   z-index: -1;
 }
 
 @keyframes fall {
   to {
-    transform: translateY(110vh);
+    transform: translateY(110vh) rotate(360deg);
   }
 }
