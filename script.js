@@ -1,4 +1,4 @@
-// MODE SWITCH
+// ===== MODE SWITCH =====
 const switchInput = document.getElementById("modeSwitch");
 
 switchInput.addEventListener("change", () => {
@@ -11,7 +11,8 @@ switchInput.addEventListener("change", () => {
   }
 });
 
-// STREAMPLAN
+
+// ===== STREAMPLAN DATEN =====
 const streamplan = [
   { tag: "Sonntag", zeit: "-", titel: "Pause" },
   { tag: "Montag", zeit: "18:00", titel: "Gaming" },
@@ -22,11 +23,21 @@ const streamplan = [
   { tag: "Samstag", zeit: "18:00", titel: "Community Games" }
 ];
 
-const tage = ["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"];
+const tage = [
+  "Sonntag",
+  "Montag",
+  "Dienstag",
+  "Mittwoch",
+  "Donnerstag",
+  "Freitag",
+  "Samstag"
+];
+
 const heute = tage[new Date().getDay()];
 const container = document.getElementById("schedule");
 
 streamplan.forEach(eintrag => {
+
   const card = document.createElement("div");
   card.className = "card";
 
@@ -41,9 +52,11 @@ streamplan.forEach(eintrag => {
   `;
 
   container.appendChild(card);
+
 });
 
-// PAW TRAIL
+
+// ===== PAW TRAIL =====
 document.addEventListener("mousemove", function(e) {
   const paw = document.createElement("div");
   paw.className = "paw-trail";
@@ -51,10 +64,13 @@ document.addEventListener("mousemove", function(e) {
   paw.style.top = e.clientY + "px";
   document.body.appendChild(paw);
 
-  setTimeout(() => paw.remove(), 500);
+  setTimeout(() => {
+    paw.remove();
+  }, 500);
 });
 
-// SAKURA
+
+// ===== SAKURA PETALS =====
 function createPetal() {
   const petal = document.createElement("div");
   petal.className = "petal";
@@ -63,7 +79,10 @@ function createPetal() {
   petal.style.animationDuration = (7 + Math.random() * 5) + "s";
 
   document.body.appendChild(petal);
-  setTimeout(() => petal.remove(), 12000);
+
+  setTimeout(() => {
+    petal.remove();
+  }, 12000);
 }
 
 setInterval(createPetal, 900);
