@@ -8,14 +8,15 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
 
+</head>
 <body class="dark">
 
 <header class="hero">
   <h1>Dili</h1>
   <p class="subtitle">Streamplan</p>
 
+  <!-- iOS SWITCH -->
   <label class="switch">
     <input type="checkbox" id="modeSwitch">
     <span class="slider"></span>
@@ -39,7 +40,7 @@
 
 <script>
 
-/* ===== DARK / LIGHT MODE ===== */
+/* ===== MODE SWITCH ===== */
 
 const switchInput = document.getElementById("modeSwitch");
 
@@ -64,17 +65,17 @@ document.addEventListener("mousemove", function(e) {
 
   setTimeout(() => {
     paw.remove();
-  }, 600);
+  }, 500);
 });
 
-/* ===== REALISTIC SAKURA ===== */
+/* ===== REALISTIC SAKURA PETALS ===== */
 
 function createPetal() {
   const petal = document.createElement("div");
   petal.className = "petal";
 
   petal.style.left = Math.random() * window.innerWidth + "px";
-  petal.style.animationDuration = (6 + Math.random() * 6) + "s";
+  petal.style.animationDuration = (7 + Math.random() * 5) + "s";
   petal.style.opacity = 0.6 + Math.random() * 0.4;
 
   document.body.appendChild(petal);
@@ -84,7 +85,7 @@ function createPetal() {
   }, 12000);
 }
 
-setInterval(createPetal, 800);
+setInterval(createPetal, 900);
 
 </script>
 
