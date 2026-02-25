@@ -3,29 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dili – Streamplan</title>
+<meta name="description" content="Streamplan von Dili – Gaming, Just Chatting & Community Streams">
+<title>Dili | Streamplan</title>
 
 <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
+
 <body class="dark">
 
-<header class="hero">
-  <h1>Dili</h1>
-  <p class="subtitle">Streamplan</p>
+<div class="page-wrapper">
 
-  <!-- iOS SWITCH -->
-  <label class="switch">
-    <input type="checkbox" id="modeSwitch">
-    <span class="slider"></span>
-  </label>
+<header class="hero">
+
+  <div class="hero-top">
+    <h1>Dili</h1>
+
+    <label class="switch">
+      <input type="checkbox" id="modeSwitch">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <p class="subtitle">Wann ich live bin</p>
+
+  <a href="https://www.twitch.tv/dili" target="_blank" class="twitch-btn">
+    Jetzt auf Twitch ansehen
+  </a>
+
 </header>
 
-<section class="schedule-wrapper">
-  <div id="schedule" class="schedule"></div>
-</section>
+<main>
+  <section class="schedule-wrapper">
+    <div id="schedule" class="schedule"></div>
+  </section>
+</main>
 
 <footer>
   <div class="socials">
@@ -35,59 +51,11 @@
     <a href="https://www.tiktok.com/@diilarals" target="_blank"><i class="fab fa-tiktok"></i></a>
     <a href="https://discord.com/invite/dili" target="_blank"><i class="fab fa-discord"></i></a>
   </div>
-  <p>© 2026 Dili</p>
+
+  <p class="copyright">© 2026 Dili</p>
 </footer>
 
-<script>
-
-/* ===== MODE SWITCH ===== */
-
-const switchInput = document.getElementById("modeSwitch");
-
-switchInput.addEventListener("change", () => {
-  if (switchInput.checked) {
-    document.body.classList.remove("dark");
-    document.body.classList.add("light");
-  } else {
-    document.body.classList.remove("light");
-    document.body.classList.add("dark");
-  }
-});
-
-/* ===== PAW TRAIL EFFECT ===== */
-
-document.addEventListener("mousemove", function(e) {
-  const paw = document.createElement("div");
-  paw.className = "paw-trail";
-  paw.style.left = e.clientX + "px";
-  paw.style.top = e.clientY + "px";
-  document.body.appendChild(paw);
-
-  setTimeout(() => {
-    paw.remove();
-  }, 500);
-});
-
-/* ===== REALISTIC SAKURA PETALS ===== */
-
-function createPetal() {
-  const petal = document.createElement("div");
-  petal.className = "petal";
-
-  petal.style.left = Math.random() * window.innerWidth + "px";
-  petal.style.animationDuration = (7 + Math.random() * 5) + "s";
-  petal.style.opacity = 0.6 + Math.random() * 0.4;
-
-  document.body.appendChild(petal);
-
-  setTimeout(() => {
-    petal.remove();
-  }, 12000);
-}
-
-setInterval(createPetal, 900);
-
-</script>
+</div>
 
 <script src="script.js"></script>
 
