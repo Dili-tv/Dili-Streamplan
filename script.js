@@ -1,12 +1,16 @@
+// ===== STREAMPLAN DATEN =====
+
 const streamplan = [
-  { tag: "Montag", zeit: "18:00", titel: "Gaming", live: true },
-  { tag: "Dienstag", zeit: "18:00", titel: "Just Chatting", live: true },
-  { tag: "Mittwoch", zeit: "18:00", titel: "Community", live: true },
-  { tag: "Donnerstag", zeit: "18:00", titel: "Gaming", live: true },
-  { tag: "Freitag", zeit: "18:00", titel: "Special Stream", live: true },
-  { tag: "Samstag", zeit: "18:00", titel: "Community Games", live: true },
-  { tag: "Sonntag", zeit: "-", titel: "Pause", live: false }
+  { tag: "Sonntag", zeit: "-", titel: "Pause" },
+  { tag: "Montag", zeit: "18:00", titel: "Gaming" },
+  { tag: "Dienstag", zeit: "18:00", titel: "Just Chatting" },
+  { tag: "Mittwoch", zeit: "18:00", titel: "Community" },
+  { tag: "Donnerstag", zeit: "18:00", titel: "Gaming" },
+  { tag: "Freitag", zeit: "18:00", titel: "Special Stream" },
+  { tag: "Samstag", zeit: "18:00", titel: "Community Games" }
 ];
+
+// ===== HEUTIGEN TAG ERMITTELN =====
 
 const tage = [
   "Sonntag",
@@ -19,9 +23,13 @@ const tage = [
 ];
 
 const heute = tage[new Date().getDay()];
+
 const container = document.getElementById("schedule");
 
+// ===== CARDS ERSTELLEN =====
+
 streamplan.forEach(eintrag => {
+
   const card = document.createElement("div");
   card.className = "card";
 
@@ -33,14 +41,8 @@ streamplan.forEach(eintrag => {
     <h2>${eintrag.tag}</h2>
     <div class="time">${eintrag.zeit}</div>
     <div>${eintrag.titel}</div>
-    ${eintrag.live ? `<a class="live-link" href="https://twitch.tv/deinkanal" target="_blank">Zum Stream</a>` : ""}
   `;
 
   container.appendChild(card);
-});
 
-document.addEventListener("mousemove", function(e) {
-  const glow = document.querySelector(".cursor-glow");
-  glow.style.left = e.clientX + "px";
-  glow.style.top = e.clientY + "px";
 });
