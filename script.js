@@ -29,12 +29,12 @@ streamplan.forEach(eintrag => {
     card.classList.add("today");
   }
 
-  card.innerHTML = 
+  card.innerHTML = `
     <h2>${eintrag.tag}</h2>
     <div class="time">${eintrag.zeit}</div>
     <div>${eintrag.titel}</div>
-    ${eintrag.live ? <a class="live-link" href="https://twitch.tv/deinkanal" target="_blank">Zum Stream</a> : ""}
-  ;
+    ${eintrag.live ? `<a class="live-link" href="https://twitch.tv/deinkanal" target="_blank">Zum Stream</a>` : ""}
+  `;
 
   container.appendChild(card);
 });
