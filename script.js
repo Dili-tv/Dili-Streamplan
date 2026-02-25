@@ -22,7 +22,11 @@ const streamplan = [
   { tag: "Samstag", zeit: "18:00", titel: "Community Games" }
 ];
 
-const tage = ["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"];
+const tage = [
+  "Sonntag","Montag","Dienstag",
+  "Mittwoch","Donnerstag","Freitag","Samstag"
+];
+
 const heute = tage[new Date().getDay()];
 const container = document.getElementById("schedule");
 
@@ -43,39 +47,16 @@ streamplan.forEach(eintrag => {
   container.appendChild(card);
 });
 
-// SCHWARZE PFOTEN
-document.addEventListener("mousemove", function(e) {
-  const paw = document.createElement("div");
-  paw.className = "paw-trail";
-
-  paw.innerHTML = `
-  <svg viewBox="0 0 64 64" width="20" height="20" fill="black">
-    <circle cx="20" cy="20" r="6"/>
-    <circle cx="44" cy="20" r="6"/>
-    <circle cx="16" cy="36" r="6"/>
-    <circle cx="48" cy="36" r="6"/>
-    <ellipse cx="32" cy="44" rx="12" ry="10"/>
-  </svg>
-  `;
-
-  paw.style.left = e.clientX + "px";
-  paw.style.top = e.clientY + "px";
-
-  document.body.appendChild(paw);
-
-  setTimeout(() => paw.remove(), 500);
-});
-
 // SAKURA
 function createPetal() {
   const petal = document.createElement("div");
   petal.className = "petal";
-
   petal.style.left = Math.random() * window.innerWidth + "px";
-  petal.style.animationDuration = (7 + Math.random() * 5) + "s";
+  petal.style.animationDuration = (6 + Math.random() * 6) + "s";
 
   document.body.appendChild(petal);
+
   setTimeout(() => petal.remove(), 12000);
 }
 
-setInterval(createPetal, 900);
+setInterval(createPetal, 900)
