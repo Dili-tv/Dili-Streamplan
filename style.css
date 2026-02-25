@@ -45,7 +45,7 @@ body.light {
 
 .mode-toggle {
   margin-top: 30px;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border-radius: 30px;
   border: none;
   background: #ff69c7;
@@ -87,7 +87,7 @@ body.dark .card {
 }
 
 body.light .card {
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.7);
   border: 1px solid rgba(255,105,199,0.3);
 }
 
@@ -96,22 +96,11 @@ body.light .card {
   transform: translateY(-4px);
 }
 
-.card h2 {
-  margin: 0;
-}
-
-.time {
-  margin-top: 6px;
-  opacity: 0.7;
-}
-
-/* ===== TODAY ===== */
-
 .today {
   box-shadow: 0 0 25px rgba(255, 46, 146, 0.6);
 }
 
-/* ===== Socials ===== */
+/* ===== Social Icons ===== */
 
 footer {
   text-align: center;
@@ -127,8 +116,15 @@ footer {
 
 .socials a {
   font-size: 26px;
-  color: inherit;
   transition: 0.3s ease;
+}
+
+body.dark .socials a {
+  color: #777;
+}
+
+body.light .socials a {
+  color: #aa3b78;
 }
 
 .socials a:hover {
@@ -137,13 +133,18 @@ footer {
   transform: translateY(-3px);
 }
 
+footer p {
+  font-size: 13px;
+  opacity: 0.4;
+}
+
 /* ===== Mouse Glow ===== */
 
 .cursor-glow {
   position: fixed;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(255, 105, 199, 0.4), transparent 60%);
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(255, 105, 199, 0.35), transparent 60%);
   pointer-events: none;
   border-radius: 50%;
   transform: translate(-50%, -50%);
