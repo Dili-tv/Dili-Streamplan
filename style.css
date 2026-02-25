@@ -12,7 +12,7 @@ body {
 /* ===== BACKGROUND ===== */
 
 body.dark {
-  background: linear-gradient(180deg, #2b0033, #140019);
+  background: linear-gradient(180deg, #CD6889, #a94d6f);
   color: white;
 }
 
@@ -98,7 +98,7 @@ input:checked + .slider:before {
 }
 
 .card {
-  background: rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.15)
   backdrop-filter: blur(10px);
   padding: 25px;
   border-radius: 16px;
@@ -195,3 +195,4 @@ footer {
     transform: translateY(110vh) rotate(360deg);
   }
 }
+
