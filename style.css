@@ -9,7 +9,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== BACKGROUND MODES ===== */
+/* ===== BACKGROUND ===== */
 
 body.dark {
   background: linear-gradient(180deg, #2b0033, #140019);
@@ -31,6 +31,10 @@ body.light {
 .hero h1 {
   font-size: 70px;
   margin: 0;
+}
+
+.subtitle {
+  opacity: 0.7;
 }
 
 /* ===== SWITCH ===== */
@@ -106,7 +110,19 @@ input:checked + .slider:before {
   box-shadow: 0 0 25px rgba(255, 105, 199, 0.5);
 }
 
-/* ===== SOCIALS ===== */
+/* ===== HEUTE HIGHLIGHT ===== */
+
+.today {
+  border: 2px solid #ff69c7;
+  box-shadow: 0 0 25px rgba(255, 105, 199, 0.8);
+}
+
+body.light .today {
+  border: 2px solid #c026d3;
+  box-shadow: 0 0 20px rgba(192, 38, 211, 0.7);
+}
+
+/* ===== SOCIALS (Original Farben) ===== */
 
 footer {
   text-align: center;
@@ -122,90 +138,53 @@ footer {
 
 .socials a {
   font-size: 28px;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
-/* Twitch */
-.socials a:nth-child(1) {
-  color: #9146FF;
-}
-
-.socials a:nth-child(1):hover {
-  text-shadow: 0 0 12px rgba(145, 70, 255, 0.8);
-  transform: translateY(-4px);
-}
-
-/* Instagram */
+.socials a:nth-child(1) { color: #9146FF; } /* Twitch */
 .socials a:nth-child(2) {
   background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.socials a:nth-child(3) { color: #FF0000; } /* YouTube */
+.socials a:nth-child(4) { color: #00F2EA; } /* TikTok */
+.socials a:nth-child(5) { color: #5865F2; } /* Discord */
 
-.socials a:nth-child(2):hover {
+.socials a:hover {
+  transform: translateY(-4px);
   filter: brightness(1.2);
-  transform: translateY(-4px);
-}
-
-/* YouTube */
-.socials a:nth-child(3) {
-  color: #FF0000;
-}
-
-.socials a:nth-child(3):hover {
-  text-shadow: 0 0 12px rgba(255, 0, 0, 0.8);
-  transform: translateY(-4px);
-}
-
-/* TikTok */
-.socials a:nth-child(4) {
-  color: #00F2EA;
-}
-
-.socials a:nth-child(4):hover {
-  text-shadow: 0 0 12px rgba(0, 242, 234, 0.8);
-  transform: translateY(-4px);
-}
-
-/* Discord */
-.socials a:nth-child(5) {
-  color: #5865F2;
-}
-
-.socials a:nth-child(5):hover {
-  text-shadow: 0 0 12px rgba(88, 101, 242, 0.8);
-  transform: translateY(-4px);
 }
 
 /* ===== PAW TRAIL ===== */
 
 .paw-trail {
   position: fixed;
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
   background: url("https://cdn-icons-png.flaticon.com/512/616/616408.png") no-repeat center;
   background-size: contain;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  animation: fadePaw 0.6s forwards;
+  animation: fadePaw 0.5s forwards;
   z-index: 9999;
 }
 
 @keyframes fadePaw {
   to {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.7);
+    transform: translate(-50%, -50%) scale(0.6);
   }
 }
 
-/* ===== REALISTIC SAKURA ===== */
+/* ===== SAKURA PETALS ===== */
 
 .petal {
   position: fixed;
   top: -40px;
-  width: 22px;
-  height: 22px;
-  background: radial-gradient(circle at 30% 30%, #fff0f5, #ffb6c1 60%);
+  width: 26px;
+  height: 26px;
+  background: radial-gradient(circle at 30% 30%, #fff0f5, #ffb6c1 70%);
   border-radius: 50% 40% 60% 50%;
   animation: fall linear;
   z-index: -1;
@@ -216,4 +195,3 @@ footer {
     transform: translateY(110vh) rotate(360deg);
   }
 }
-
