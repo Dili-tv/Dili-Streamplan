@@ -9,7 +9,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== BACKGROUND ===== */
+/* BACKGROUND */
 
 body.dark {
   background: #CD6889;
@@ -21,7 +21,7 @@ body.light {
   color: #4a004e;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 
 .hero {
   text-align: center;
@@ -29,15 +29,13 @@ body.light {
 }
 
 .hero h1 {
-  font-family: "Post-Antiqua", Georgia, serif;
   font-size: 72px;
   margin: 0;
-  letter-spacing: 1px;
 }
 
 .subtitle {
-  font-size: 20px;
   margin-top: 10px;
+  font-size: 20px;
   opacity: 0.85;
 }
 
@@ -47,11 +45,10 @@ body.light {
   justify-content: center;
 }
 
-/* ===== SWITCH ===== */
+/* SWITCH */
 
 .switch {
   position: relative;
-  display: inline-block;
   width: 60px;
   height: 34px;
 }
@@ -92,7 +89,7 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* ===== SCHEDULE ===== */
+/* SCHEDULE */
 
 .schedule-wrapper {
   max-width: 800px;
@@ -114,11 +111,7 @@ input:checked + .slider:before {
   transition: 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-}
-
-/* ===== NEON HEUTE ===== */
+/* HEUTIGER TAG NEON */
 
 .today {
   border: 2px solid #ff2ea6;
@@ -138,7 +131,7 @@ input:checked + .slider:before {
   }
 }
 
-/* ===== SOCIALS ===== */
+/* SOCIALS */
 
 footer {
   text-align: center;
@@ -154,7 +147,6 @@ footer {
 
 .socials a {
   font-size: 28px;
-  transition: 0.3s;
 }
 
 .socials a:nth-child(1) { color: #9146FF; }
@@ -167,11 +159,7 @@ footer {
 .socials a:nth-child(4) { color: #00F2EA; }
 .socials a:nth-child(5) { color: #5865F2; }
 
-.socials a:hover {
-  transform: translateY(-4px);
-}
-
-/* ===== PAW TRAIL ===== */
+/* PAW TRAIL */
 
 .paw-trail {
   position: fixed;
@@ -190,21 +178,33 @@ footer {
   }
 }
 
-/* ===== SAKURA ===== */
+/* REALISTISCHE SAKURA */
 
 .petal {
   position: fixed;
   top: -40px;
-  width: 28px;
-  height: 28px;
-  background: radial-gradient(circle at 30% 30%, #fff0f5, #ffb6c1 70%);
-  border-radius: 50% 40% 60% 50%;
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
   animation: fall linear;
   z-index: -1;
 }
 
+.petal::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 30%, #ffe6f0 0%, #ffb6c1 60%, #ff8fb3 100%);
+  border-radius: 50%;
+  clip-path: polygon(
+    50% 0%, 65% 30%, 100% 35%,
+    75% 60%, 85% 100%, 50% 75%,
+    15% 100%, 25% 60%, 0% 35%, 35% 30%
+  );
+}
+
 @keyframes fall {
-  to {
-    transform: translateY(110vh) rotate(360deg);
-  }
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(110vh) rotate(360deg); }
 }
