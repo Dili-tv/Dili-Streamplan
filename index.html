@@ -12,15 +12,19 @@
 </head>
 <body>
 
-<div class="cursor-glow"></div>
+<div class="background"></div>
+<div class="cursor-paw"></div>
 
 <header class="hero">
   <h1>Dili</h1>
   <p class="subtitle">Streamplan</p>
 
-  <button class="mode-toggle" onclick="toggleMode()">
-    🌸 Modus wechseln
-  </button>
+  <!-- SWITCH -->
+  <label class="switch">
+    <input type="checkbox" id="modeSwitch">
+    <span class="slider"></span>
+  </label>
+
 </header>
 
 <section class="schedule-wrapper">
@@ -40,43 +44,51 @@
 
 <script>
 
-/* =========================
-   MODE TOGGLE
-========================= */
+/* ===== MODE SWITCH ===== */
 
-function toggleMode() {
-  const body = document.body;
+const switchInput = document.getElementById("modeSwitch");
 
-  if (body.classList.contains("dark")) {
-    body.classList.remove("dark");
-    body.classList.add("light");
-    localStorage.setItem("mode", "light");
-  } else {
-    body.classList.remove("light");
-    body.classList.add("dark");
-    localStorage.setItem("mode", "dark");
-  }
+function setMode(mode) {
+  document.body.className = mode;
+  localStorage.setItem("mode", mode);
+  switchInput.checked = mode === "light";
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-
-  const savedMode = localStorage.getItem("mode");
-
-  if (savedMode === "light") {
-    document.body.classList.add("light");
+switchInput.addEventListener("change", () => {
+  if (switchInput.checked) {
+    setMode("light");
   } else {
-    document.body.classList.add("dark");
+    setMode("dark");
   }
-
-  /* Maus Glow */
-  const glow = document.querySelector(".cursor-glow");
-
-  document.addEventListener("mousemove", function(e) {
-    glow.style.left = e.clientX + "px";
-    glow.style.top = e.clientY + "px";
-  });
-
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const savedMode = localStorage.getItem("mode") || "dark";
+  setMode(savedMode);
+});
+
+/* ===== Paw Cursor ===== */
+
+const paw = document.querySelector(".cursor-paw");
+
+document.addEventListener("mousemove", e => {
+  paw.style.left = e.clientX + "px";
+  paw.style.top = e.clientY + "px";
+});
+
+/* ===== Sakura Petals ===== */
+
+function createPetal() {
+  const petal = document.createElement("div");
+  petal.classList.add("petal");
+  petal.style.left = Math.random() * window.innerWidth + "px";
+  petal.style.animationDuration = 5 + Math.random() * 5 + "s";
+  document.body.appendChild(petal);
+
+  setTimeout(() => petal.remove(), 10000);
+}
+
+setInterval(createPetal, 500);
 
 </script>
 
