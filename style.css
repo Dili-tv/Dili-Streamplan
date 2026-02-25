@@ -5,50 +5,22 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #0f0f14;
-  color: white;
+  transition: background 0.4s ease, color 0.4s ease;
   overflow-x: hidden;
 }
 
-/* ===== Background Glow Animation ===== */
+/* ===== DARK MODE ===== */
 
-.background-glow {
-  position: fixed;
-  top: -200px;
-  left: -200px;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(255, 0, 128, 0.3), transparent 60%);
-  animation: moveGlow 14s infinite alternate ease-in-out;
-  z-index: -1;
+body.dark {
+  background: linear-gradient(180deg, #1a001f, #0f0015);
+  color: white;
 }
 
-@keyframes moveGlow {
-  0% { transform: translate(0,0); }
-  100% { transform: translate(250px,200px); }
-}
+/* ===== LIGHT MODE ===== */
 
-/* ===== Fade In Animation ===== */
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s forwards ease;
-}
-
-.delay {
-  animation-delay: 0.3s;
-}
-
-.delay2 {
-  animation-delay: 0.6s;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+body.light {
+  background: linear-gradient(180deg, #ffd6eb, #ffc2e2);
+  color: #3a003f;
 }
 
 /* ===== HERO ===== */
@@ -60,17 +32,31 @@ body {
 
 .hero h1 {
   font-size: 72px;
-  font-weight: 700;
   margin: 0;
-  background: linear-gradient(90deg, #ff2e92, #c084fc);
+  background: linear-gradient(90deg, #ff2e92, #ff69c7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
   margin-top: 12px;
-  opacity: 0.6;
-  font-size: 18px;
+  opacity: 0.7;
+}
+
+.mode-toggle {
+  margin-top: 30px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  background: #ff69c7;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.mode-toggle:hover {
+  transform: scale(1.05);
 }
 
 /* ===== Schedule ===== */
@@ -90,58 +76,47 @@ body {
 /* ===== Cards ===== */
 
 .card {
-  background: rgba(26, 26, 36, 0.85);
-  border-radius: 16px;
   padding: 25px;
-  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
   transition: 0.3s ease;
-  backdrop-filter: blur(6px);
+}
+
+body.dark .card {
+  background: rgba(255, 0, 128, 0.08);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+body.light .card {
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,105,199,0.3);
 }
 
 .card:hover {
-  border-color: #ff2e92;
-  box-shadow: 0 0 25px rgba(255, 46, 146, 0.4);
+  box-shadow: 0 0 30px rgba(255, 46, 146, 0.4);
   transform: translateY(-4px);
 }
 
 .card h2 {
   margin: 0;
-  font-size: 22px;
 }
 
 .time {
   margin-top: 6px;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
-.live-link {
-  display: inline-block;
-  margin-top: 10px;
-  color: #ff69c7;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.live-link:hover {
-  text-decoration: underline;
-}
-
-/* ===== Today Highlight ===== */
+/* ===== TODAY ===== */
 
 .today {
-  border: 1px solid #c084fc;
-  box-shadow: 0 0 20px rgba(192,132,252,0.5);
+  box-shadow: 0 0 25px rgba(255, 46, 146, 0.6);
 }
 
-/* ===== Footer ===== */
+/* ===== Socials ===== */
 
 footer {
   text-align: center;
   padding: 50px 20px;
-  border-top: 1px solid rgba(255,255,255,0.05);
 }
-
-/* ===== Social Icons ===== */
 
 .socials {
   display: flex;
@@ -152,43 +127,26 @@ footer {
 
 .socials a {
   font-size: 26px;
-  color: #777;
+  color: inherit;
   transition: 0.3s ease;
 }
 
-/* Twitch */
-.socials a:nth-child(1):hover {
-  color: #9146ff;
-  text-shadow: 0 0 12px rgba(145, 70, 255, 0.8);
+.socials a:hover {
+  color: #ff2e92;
+  text-shadow: 0 0 14px rgba(255, 46, 146, 0.8);
+  transform: translateY(-3px);
 }
 
-/* Instagram */
-.socials a:nth-child(2):hover {
-  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 14px rgba(221, 42, 123, 0.6);
-}
+/* ===== Mouse Glow ===== */
 
-/* YouTube */
-.socials a:nth-child(3):hover {
-  color: #ff0000;
-  text-shadow: 0 0 14px rgba(255, 0, 0, 0.7);
-}
-
-/* TikTok */
-.socials a:nth-child(4):hover {
-  color: #00f2ea;
-  text-shadow: 0 0 14px rgba(0, 242, 234, 0.8);
-}
-
-/* Discord */
-.socials a:nth-child(5):hover {
-  color: #5865F2;
-  text-shadow: 0 0 14px rgba(88, 101, 242, 0.8);
-}
-
-footer p {
-  font-size: 13px;
-  opacity: 0.4;
+.cursor-glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 105, 199, 0.4), transparent 60%);
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.05s;
+  z-index: 9999;
 }
