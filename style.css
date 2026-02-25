@@ -5,21 +5,37 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  transition: background 0.4s ease, color 0.4s ease;
+  transition: background 0.5s ease, color 0.5s ease;
   overflow-x: hidden;
+}
+
+/* ===== Animated Gradient ===== */
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #ff9acb, #ff69c7, #c084fc, #ffb6e6);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  z-index: -2;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ===== DARK MODE ===== */
 
 body.dark {
-  background: linear-gradient(180deg, #1a001f, #0f0015);
   color: white;
 }
 
 /* ===== LIGHT MODE ===== */
 
 body.light {
-  background: linear-gradient(180deg, #ffd6eb, #ffc2e2);
   color: #3a003f;
 }
 
@@ -33,30 +49,55 @@ body.light {
 .hero h1 {
   font-size: 72px;
   margin: 0;
-  background: linear-gradient(90deg, #ff2e92, #ff69c7);
+  background: linear-gradient(90deg, #ffffff, #ffe0f5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.subtitle {
-  margin-top: 12px;
-  opacity: 0.7;
-}
+/* ===== SWITCH ===== */
 
-.mode-toggle {
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
   margin-top: 30px;
-  padding: 12px 24px;
-  border-radius: 30px;
-  border: none;
-  background: #ff69c7;
-  color: white;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
 }
 
-.mode-toggle:hover {
-  transform: scale(1.05);
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ff69c7;
+  border-radius: 34px;
+  width: 100%;
+  height: 100%;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #c084fc;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
 }
 
 /* ===== Schedule ===== */
@@ -73,31 +114,17 @@ body.light {
   gap: 25px;
 }
 
-/* ===== Cards ===== */
-
 .card {
   padding: 25px;
   border-radius: 16px;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(8px);
   transition: 0.3s ease;
 }
 
-body.dark .card {
-  background: rgba(255, 0, 128, 0.08);
-  border: 1px solid rgba(255,255,255,0.05);
-}
-
-body.light .card {
-  background: rgba(255,255,255,0.7);
-  border: 1px solid rgba(255,105,199,0.3);
-}
-
 .card:hover {
-  box-shadow: 0 0 30px rgba(255, 46, 146, 0.4);
   transform: translateY(-4px);
-}
-
-.today {
-  box-shadow: 0 0 25px rgba(255, 46, 146, 0.6);
+  box-shadow: 0 0 25px rgba(255,255,255,0.5);
 }
 
 /* ===== Social Icons ===== */
@@ -116,38 +143,44 @@ footer {
 
 .socials a {
   font-size: 26px;
-  transition: 0.3s ease;
-}
-
-body.dark .socials a {
-  color: #777;
-}
-
-body.light .socials a {
-  color: #aa3b78;
+  color: white;
+  transition: 0.3s;
 }
 
 .socials a:hover {
-  color: #ff2e92;
-  text-shadow: 0 0 14px rgba(255, 46, 146, 0.8);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  text-shadow: 0 0 15px white;
 }
 
-footer p {
-  font-size: 13px;
-  opacity: 0.4;
-}
+/* ===== Paw Cursor ===== */
 
-/* ===== Mouse Glow ===== */
-
-.cursor-glow {
+.cursor-paw {
   position: fixed;
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle, rgba(255, 105, 199, 0.35), transparent 60%);
+  width: 40px;
+  height: 40px;
+  background: url("https://cdn-icons-png.flaticon.com/512/616/616408.png") no-repeat center;
+  background-size: contain;
   pointer-events: none;
-  border-radius: 50%;
   transform: translate(-50%, -50%);
-  transition: 0.05s;
   z-index: 9999;
+}
+
+/* ===== Sakura Petals ===== */
+
+.petal {
+  position: fixed;
+  top: -20px;
+  width: 15px;
+  height: 15px;
+  background: pink;
+  border-radius: 50% 50% 50% 0;
+  opacity: 0.7;
+  animation: fall linear;
+  z-index: -1;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
 }
