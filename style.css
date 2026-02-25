@@ -5,20 +5,20 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  transition: background 0.5s ease, color 0.5s ease;
+  transition: 0.4s;
   overflow-x: hidden;
 }
 
-/* ===== Animated Gradient ===== */
+/* ===== Animated Gradient Background ===== */
 
-.background {
+.gradient-bg {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: linear-gradient(-45deg, #ff9acb, #ff69c7, #c084fc, #ffb6e6);
+  background: linear-gradient(-45deg, #ffb6e6, #ff69c7, #d946ef, #f9a8d4);
   background-size: 400% 400%;
   animation: gradientMove 15s ease infinite;
-  z-index: -2;
+  z-index: -3;
 }
 
 @keyframes gradientMove {
@@ -27,31 +27,26 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* ===== DARK MODE ===== */
+/* ===== Modes ===== */
 
 body.dark {
   color: white;
 }
 
-/* ===== LIGHT MODE ===== */
-
 body.light {
-  color: #3a003f;
+  color: #4a004e;
 }
 
 /* ===== HERO ===== */
 
 .hero {
   text-align: center;
-  padding: 130px 20px 60px;
+  padding: 120px 20px 60px;
 }
 
 .hero h1 {
-  font-size: 72px;
+  font-size: 70px;
   margin: 0;
-  background: linear-gradient(90deg, #ffffff, #ffe0f5);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 /* ===== SWITCH ===== */
@@ -72,11 +67,11 @@ body.light {
 
 .slider {
   position: absolute;
-  cursor: pointer;
   background-color: #ff69c7;
   border-radius: 34px;
   width: 100%;
   height: 100%;
+  cursor: pointer;
   transition: 0.4s;
 }
 
@@ -87,13 +82,13 @@ body.light {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background: white;
   border-radius: 50%;
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #c084fc;
+  background-color: #d946ef;
 }
 
 input:checked + .slider:before {
@@ -115,16 +110,16 @@ input:checked + .slider:before {
 }
 
 .card {
+  background: rgba(255,255,255,0.2);
   padding: 25px;
   border-radius: 16px;
-  background: rgba(255,255,255,0.2);
-  backdrop-filter: blur(8px);
-  transition: 0.3s ease;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 25px rgba(255,255,255,0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(255,255,255,0.5);
 }
 
 /* ===== Social Icons ===== */
@@ -154,12 +149,12 @@ footer {
 
 /* ===== Paw Cursor ===== */
 
-.cursor-paw {
+.paw {
   position: fixed;
-  width: 40px;
-  height: 40px;
-  background: url("https://cdn-icons-png.flaticon.com/512/616/616408.png") no-repeat center;
-  background-size: contain;
+  width: 30px;
+  height: 30px;
+  background: #ff69c7;
+  border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
   z-index: 9999;
@@ -170,13 +165,13 @@ footer {
 .petal {
   position: fixed;
   top: -20px;
-  width: 15px;
-  height: 15px;
-  background: pink;
+  width: 14px;
+  height: 14px;
+  background: #ffc0cb;
   border-radius: 50% 50% 50% 0;
-  opacity: 0.7;
+  opacity: 0.8;
   animation: fall linear;
-  z-index: -1;
+  z-index: -2;
 }
 
 @keyframes fall {
