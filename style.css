@@ -143,3 +143,16 @@ footer {
   transform: translateY(-6px) scale(1.1);
   filter: drop-shadow(0 0 10px currentColor);
 }
+
+/* WOCHEN-DATUM */
+
+.week-range {
+  margin-top: 8px;
+  font-size: 16px;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+
+body.dark .week-range {
+  color: #2b002e;
+}
