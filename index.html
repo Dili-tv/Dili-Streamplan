@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -19,7 +19,7 @@
 
 <header class="hero">
   <h1 class="name">Dili</h1>
-  <p class="subtitle">Streamplan</p>
+  <h2 class="subtitle">Streamplan</h2>
 
   <div class="week-container">
     <span class="flower-icon">🌸</span>
@@ -50,14 +50,12 @@
 </footer>
 
 <script>
-/* MODE TOGGLE */
 const flower = document.getElementById("modeFlower");
 flower.addEventListener("click", () => {
   document.body.classList.toggle("dark");
   document.body.classList.toggle("light");
 });
 
-/* WOCHENBEREICH */
 function getWeekRange() {
   const today = new Date();
   const day = today.getDay();
@@ -82,7 +80,6 @@ function getWeekRange() {
 
 getWeekRange();
 
-/* STREAMPLAN */
 const streamplan = [
   { tag: "Montag", zeit: "18:00", titel: "Gaming" },
   { tag: "Dienstag", zeit: "18:00", titel: "Just Chatting" },
@@ -95,7 +92,6 @@ const streamplan = [
 
 const heute = new Date().getDay();
 const heuteIndex = heute === 0 ? 6 : heute - 1;
-
 const container = document.getElementById("schedule");
 
 streamplan.forEach((eintrag, index) => {
@@ -109,7 +105,7 @@ streamplan.forEach((eintrag, index) => {
   }
 
   card.innerHTML = `
-    <h2>${eintrag.tag}</h2>
+    <h3>${eintrag.tag}</h3>
     <div>${eintrag.zeit}</div>
     <div>${eintrag.titel}</div>
   `;
