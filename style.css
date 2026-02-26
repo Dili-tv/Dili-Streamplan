@@ -24,7 +24,7 @@ body.light {
 
 .hero {
   text-align: center;
-  padding: 70px 20px 35px;   /* kompakter */
+  padding: 60px 20px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,28 +37,28 @@ body.light {
 }
 
 .subtitle {
-  margin-top: 6px;
-  font-size: 26px;
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;     /* größer */
   font-weight: 700;
-  color: #4a004e;
+  margin: 4px 0 2px 0; /* deutlich weniger Abstand */
+  color: #2b002e;
 }
 
 body.dark .subtitle {
   color: #2b002e;
 }
 
-/* WEEK RANGE MIT BLÜTEN */
+/* WEEK RANGE */
 
 .week-container {
-  margin-top: 6px;
+  margin-top: 2px;     /* viel enger */
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .week-range {
   font-size: 15px;
-  opacity: 0.9;
   letter-spacing: 1px;
 }
 
@@ -69,15 +69,13 @@ body.dark .subtitle {
 /* SWITCH */
 
 .flower-toggle {
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
+  margin-top: 12px;
 }
 
 #modeFlower {
-  width: 48px;
+  width: 45px;
   cursor: pointer;
-  transition: transform 0.4s ease, filter 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
 #modeFlower:hover {
@@ -106,14 +104,14 @@ body.dark .subtitle {
   transition: 0.4s ease;
 }
 
-/* VERGANGENE TAGE */
+/* PAST */
 
 .past {
   opacity: 0.4;
   filter: blur(2px);
 }
 
-/* AKTUELLER TAG NEON */
+/* TODAY NEON */
 
 .today {
   border: 2px solid #b026ff;
