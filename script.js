@@ -6,7 +6,8 @@ flower.addEventListener("click", () => {
   document.body.classList.toggle("light");
 });
 
-// STREAMPLAN
+// STREAMPLAN (Montag → Sonntag)
+
 const streamplan = [
   { tag: "Montag", zeit: "18:00", titel: "Gaming" },
   { tag: "Dienstag", zeit: "18:00", titel: "Just Chatting" },
@@ -39,7 +40,7 @@ streamplan.forEach((eintrag, index) => {
   container.appendChild(card);
 });
 
-// REALISTISCHE FALLENDE BLÜTEN
+// FALLENDE BLÜTEN
 
 function createPetal() {
   const petal = document.createElement("div");
@@ -50,10 +51,7 @@ function createPetal() {
 
   petal.innerHTML = `
     <svg viewBox="0 0 40 60" width="24" height="36">
-      <path d="M20 0 
-               C35 10 35 40 20 60 
-               C5 40 5 10 20 0 Z" 
-            fill="#ffb7d5"/>
+      <path d="M20 0 C35 10 35 40 20 60 C5 40 5 10 20 0 Z" fill="#ffb7d5"/>
     </svg>
   `;
 
