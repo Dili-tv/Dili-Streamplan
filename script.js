@@ -44,23 +44,32 @@ streamplan.forEach((eintrag, index) => {
   container.appendChild(card);
 });
 
-// SÜSSE KATZENPFOTEN IM HINTERGRUND
+// DIAGONALE KATZENPFOTEN-SPUR
 
-function createBackgroundPaw() {
+let pawStep = 0;
+
+function createDiagonalPaw() {
 
   const paw = document.createElement("div");
   paw.className = "paw-bg";
 
+  // Position diagonal berechnen
+  const x = pawStep * 80;
+  const y = window.innerHeight - (pawStep * 80);
+
+  paw.style.left = x + "px";
+  paw.style.top = y + "px";
+
+  // Leichte Drehung für Natürlichkeit
+  paw.style.transform = `rotate(${pawStep % 2 === 0 ? -25 : 25}deg)`;
+
   paw.innerHTML = `
     <svg viewBox="0 0 100 100" width="45" height="45">
-      <!-- Zehen -->
       <ellipse cx="30" cy="35" rx="10" ry="14" fill="black"/>
       <ellipse cx="50" cy="25" rx="10" ry="14" fill="black"/>
       <ellipse cx="70" cy="35" rx="10" ry="14" fill="black"/>
       <ellipse cx="40" cy="55" rx="10" ry="14" fill="black"/>
       <ellipse cx="60" cy="55" rx="10" ry="14" fill="black"/>
-
-      <!-- Ballen -->
       <path d="M35 65 
                Q50 85 65 65 
                Q70 55 50 50 
@@ -69,15 +78,18 @@ function createBackgroundPaw() {
     </svg>
   `;
 
-  paw.style.left = Math.random() * window.innerWidth + "px";
-  paw.style.top = Math.random() * window.innerHeight + "px";
-  paw.style.transform = `rotate(${Math.random() * 360}deg)`;
-
   document.body.appendChild(paw);
 
   setTimeout(() => {
     paw.remove();
-  }, 5000);
+  }, 6000);
+
+  pawStep++;
+
+  // Wenn wir oben angekommen sind → neu starten
+  if (x > window.innerWidth || y < 0) {
+    pawStep = 0;
+  }
 }
 
-setInterval(createBackgroundPaw, 1800);
+setInterval(createDiagonalPaw, 800);
