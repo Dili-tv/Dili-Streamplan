@@ -7,6 +7,7 @@ body {
   font-family: 'Poppins', sans-serif;
   transition: background 0.4s ease, color 0.4s ease;
   overflow-x: hidden;
+  position: relative;
 }
 
 /* BACKGROUND */
@@ -95,6 +96,8 @@ input:checked + .slider:before {
   max-width: 800px;
   margin: auto;
   padding: 40px 20px 100px;
+  position: relative;
+  z-index: 2;
 }
 
 .schedule {
@@ -122,14 +125,12 @@ input:checked + .slider:before {
   from {
     box-shadow:
       0 0 10px #b026ff,
-      0 0 20px #b026ff,
-      0 0 30px rgba(176, 38, 255, 0.6);
+      0 0 20px #b026ff;
   }
   to {
     box-shadow:
       0 0 20px #b026ff,
-      0 0 40px #b026ff,
-      0 0 60px rgba(176, 38, 255, 0.9);
+      0 0 40px #b026ff;
   }
 }
 
@@ -138,6 +139,8 @@ input:checked + .slider:before {
 footer {
   text-align: center;
   padding: 50px 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .socials {
@@ -149,7 +152,6 @@ footer {
 
 .socials a {
   font-size: 28px;
-  transition: 0.3s;
 }
 
 .socials a:nth-child(1) { color: #9146FF; }
@@ -162,30 +164,21 @@ footer {
 .socials a:nth-child(4) { color: #00F2EA; }
 .socials a:nth-child(5) { color: #5865F2; }
 
-.socials a:hover {
-  transform: translateY(-4px);
-}
+/* BACKGROUND PAW PRINTS */
 
-/* REALISTISCHE SAKURA */
-
-.petal {
+.paw-bg {
   position: fixed;
-  top: -40px;
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
+  opacity: 0.15;
   pointer-events: none;
-  z-index: -1;
-  animation: sakuraFall linear forwards;
+  z-index: 0;
+  animation: fadePaw 4s ease forwards;
 }
 
-@keyframes sakuraFall {
-  0% {
-    transform: translateY(0) translateX(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(110vh) translateX(40px) rotate(360deg);
-    opacity: 0.9;
-  }
+@keyframes fadePaw {
+  0% { opacity: 0; transform: scale(0.6); }
+  20% { opacity: 0.15; }
+  80% { opacity: 0.15; }
+  100% { opacity: 0; transform: scale(1.1); }
 }
-
