@@ -17,6 +17,11 @@
 
 <body class="dark">
 
+<!-- EIN KOI IM HINTERGRUND -->
+<div class="koi-container">
+  <img src="koi.png" class="koi">
+</div>
+
 <header class="hero">
   <h1 class="name">Dili</h1>
   <h2 class="subtitle">Streamplan</h2>
@@ -77,41 +82,7 @@ function getWeekRange() {
   document.getElementById("weekRange").textContent =
     format(monday) + " – " + format(sunday);
 }
-
 getWeekRange();
-
-const streamplan = [
-  { tag: "Montag", zeit: "18:00", titel: "Gaming" },
-  { tag: "Dienstag", zeit: "18:00", titel: "Just Chatting" },
-  { tag: "Mittwoch", zeit: "18:00", titel: "Community" },
-  { tag: "Donnerstag", zeit: "18:00", titel: "Gaming" },
-  { tag: "Freitag", zeit: "18:00", titel: "Special Stream" },
-  { tag: "Samstag", zeit: "18:00", titel: "Community Games" },
-  { tag: "Sonntag", zeit: "-", titel: "Pause" }
-];
-
-const heute = new Date().getDay();
-const heuteIndex = heute === 0 ? 6 : heute - 1;
-const container = document.getElementById("schedule");
-
-streamplan.forEach((eintrag, index) => {
-  const card = document.createElement("div");
-  card.classList.add("card");
-
-  if (index === heuteIndex) {
-    card.classList.add("today");
-  } else if (index < heuteIndex) {
-    card.classList.add("past");
-  }
-
-  card.innerHTML = `
-    <h3>${eintrag.tag}</h3>
-    <div>${eintrag.zeit}</div>
-    <div>${eintrag.titel}</div>
-  `;
-
-  container.appendChild(card);
-});
 </script>
 
 </body>
