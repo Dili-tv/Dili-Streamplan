@@ -39,20 +39,29 @@ streamplan.forEach((eintrag, index) => {
   container.appendChild(card);
 });
 
-// FALLING PETALS
+// REALISTISCHE FALLENDE BLÜTEN
 
 function createPetal() {
   const petal = document.createElement("div");
   petal.className = "petal";
 
   petal.style.left = Math.random() * window.innerWidth + "px";
-  petal.style.animationDuration = (6 + Math.random() * 4) + "s";
+  petal.style.animationDuration = (8 + Math.random() * 6) + "s";
+
+  petal.innerHTML = `
+    <svg viewBox="0 0 40 60" width="24" height="36">
+      <path d="M20 0 
+               C35 10 35 40 20 60 
+               C5 40 5 10 20 0 Z" 
+            fill="#ffb7d5"/>
+    </svg>
+  `;
 
   document.body.appendChild(petal);
 
   setTimeout(() => {
     petal.remove();
-  }, 10000);
+  }, 14000);
 }
 
-setInterval(createPetal, 600);
+setInterval(createPetal, 900);
