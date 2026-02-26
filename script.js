@@ -11,7 +11,7 @@ switchInput.addEventListener("change", () => {
   }
 });
 
-// STREAMPLAN – FESTE REIHENFOLGE MONTAG → SONNTAG
+// STREAMPLAN (Montag → Sonntag)
 const streamplan = [
   { tag: "Montag", zeit: "18:00", titel: "Gaming" },
   { tag: "Dienstag", zeit: "18:00", titel: "Just Chatting" },
@@ -22,17 +22,12 @@ const streamplan = [
   { tag: "Sonntag", zeit: "-", titel: "Pause" }
 ];
 
-// HEUTIGEN TAG ERMITTELN (EUROPÄISCHES FORMAT)
-const heuteIndex = new Date().getDay(); 
-// getDay(): 0 = Sonntag, 1 = Montag, ..., 6 = Samstag
-
-// Wir wandeln es um, damit Montag = 0 wird
+const heuteIndex = new Date().getDay();
 const angepassterIndex = heuteIndex === 0 ? 6 : heuteIndex - 1;
 
 const container = document.getElementById("schedule");
 
 streamplan.forEach((eintrag, index) => {
-
   const card = document.createElement("div");
   card.className = "card";
 
@@ -47,5 +42,33 @@ streamplan.forEach((eintrag, index) => {
   `;
 
   container.appendChild(card);
-
 });
+
+// HINTERGRUND PFOTEN
+
+function createBackgroundPaw() {
+  const paw = document.createElement("div");
+  paw.className = "paw-bg";
+
+  paw.innerHTML = `
+  <svg viewBox="0 0 64 64" width="40" height="40" fill="black">
+    <circle cx="20" cy="20" r="6"/>
+    <circle cx="44" cy="20" r="6"/>
+    <circle cx="16" cy="36" r="6"/>
+    <circle cx="48" cy="36" r="6"/>
+    <ellipse cx="32" cy="44" rx="12" ry="10"/>
+  </svg>
+  `;
+
+  paw.style.left = Math.random() * window.innerWidth + "px";
+  paw.style.top = Math.random() * window.innerHeight + "px";
+  paw.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+  document.body.appendChild(paw);
+
+  setTimeout(() => {
+    paw.remove();
+  }, 4000);
+}
+
+setInterval(createBackgroundPaw, 1500);
