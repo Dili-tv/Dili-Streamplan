@@ -111,23 +111,25 @@ input:checked + .slider:before {
   transition: 0.3s ease;
 }
 
-/* NEON HEUTE */
+/* NEON LILA HEUTE */
 
 .today {
-  border: 2px solid #ff2ea6;
-  animation: neonPulse 1.8s infinite alternate;
+  border: 2px solid #b026ff;
+  animation: neonPurple 1.8s infinite alternate;
 }
 
-@keyframes neonPulse {
+@keyframes neonPurple {
   from {
     box-shadow:
-      0 0 10px #ff2ea6,
-      0 0 20px #ff2ea6;
+      0 0 10px #b026ff,
+      0 0 20px #b026ff,
+      0 0 30px rgba(176, 38, 255, 0.6);
   }
   to {
     box-shadow:
-      0 0 20px #ff2ea6,
-      0 0 40px #ff2ea6;
+      0 0 20px #b026ff,
+      0 0 40px #b026ff,
+      0 0 60px rgba(176, 38, 255, 0.9);
   }
 }
 
@@ -186,3 +188,4 @@ footer {
     opacity: 0.9;
   }
 }
+
