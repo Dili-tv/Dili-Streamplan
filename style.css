@@ -27,6 +27,9 @@ body.light {
 .hero {
   text-align: center;
   padding: 120px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero h1 {
@@ -44,6 +47,7 @@ body.light {
   margin-top: 25px;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 /* SWITCH */
@@ -62,12 +66,13 @@ body.light {
 
 .slider {
   position: absolute;
-  background-color: #ff69c7;
+  background: linear-gradient(45deg, #ff69c7, #b026ff);
   border-radius: 34px;
   width: 100%;
   height: 100%;
   cursor: pointer;
   transition: 0.4s;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
 }
 
 .slider:before {
@@ -83,7 +88,7 @@ body.light {
 }
 
 input:checked + .slider {
-  background-color: #c026d3;
+  background: linear-gradient(45deg, #b026ff, #6a00ff);
 }
 
 input:checked + .slider:before {
@@ -164,16 +169,16 @@ footer {
 .socials a:nth-child(4) { color: #00F2EA; }
 .socials a:nth-child(5) { color: #5865F2; }
 
-/* BACKGROUND PAW PRINTS */
+/* HINTERGRUND PFOTEN */
 
 .paw-bg {
   position: fixed;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   opacity: 0.15;
   pointer-events: none;
   z-index: 0;
-  animation: fadePaw 4s ease forwards;
+  animation: fadePaw 6s ease forwards;
 }
 
 @keyframes fadePaw {
