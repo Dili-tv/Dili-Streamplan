@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  transition: background 0.6s ease, color 0.6s ease;
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
 /* BACKGROUND */
@@ -41,30 +41,31 @@ body.light {
   opacity: 0.85;
 }
 
-/* BLOSSOM TOGGLE */
+/* BLOSSOM SWITCH */
 
 .flower-toggle {
-  margin-top: 35px;
+  margin-top: 25px;
   display: flex;
   justify-content: center;
 }
 
 #modeFlower {
-  width: 130px;
+  width: 55px;   /* <-- kleiner & perfekt proportioniert */
+  height: auto;
   cursor: pointer;
-  transition: transform 0.5s ease, filter 0.5s ease;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 #modeFlower:hover {
-  transform: scale(1.08) rotate(6deg);
+  transform: scale(1.08) rotate(5deg);
 }
 
 body.dark #modeFlower {
-  filter: drop-shadow(0 0 25px rgba(176, 38, 255, 0.6));
+  filter: drop-shadow(0 0 20px rgba(176, 38, 255, 0.6));
 }
 
 body.light #modeFlower {
-  filter: drop-shadow(0 0 15px rgba(255, 150, 200, 0.5));
+  filter: drop-shadow(0 0 12px rgba(255, 150, 200, 0.5));
 }
 
 /* SCHEDULE */
