@@ -21,33 +21,57 @@
   <p class="subtitle">Streamplan</p>
 
   <div class="flower-toggle">
-    <svg id="modeFlower" viewBox="0 0 120 120" width="90" height="90">
-      <defs>
-        <radialGradient id="sakuraGrad" cx="50%" cy="40%" r="60%">
-          <stop offset="0%" stop-color="#fff0f6"/>
-          <stop offset="60%" stop-color="#ffb7d5"/>
-          <stop offset="100%" stop-color="#ff8fc7"/>
-        </radialGradient>
-      </defs>
-
-      <!-- 5 Petals -->
-      <g>
-        <ellipse cx="60" cy="28" rx="18" ry="30" fill="url(#sakuraGrad)"/>
-        <ellipse cx="97" cy="55" rx="18" ry="30" fill="url(#sakuraGrad)" transform="rotate(72 60 60)"/>
-        <ellipse cx="82" cy="98" rx="18" ry="30" fill="url(#sakuraGrad)" transform="rotate(144 60 60)"/>
-        <ellipse cx="38" cy="98" rx="18" ry="30" fill="url(#sakuraGrad)" transform="rotate(216 60 60)"/>
-        <ellipse cx="23" cy="55" rx="18" ry="30" fill="url(#sakuraGrad)" transform="rotate(288 60 60)"/>
-      </g>
-
-      <!-- Center -->
-      <circle cx="60" cy="60" r="14" fill="#ffd166"/>
-    </svg>
+    <img id="modeFlower" src="blume.png" alt="Mode Toggle">
   </div>
 </header>
 
 <main>
   <section class="schedule-wrapper">
-    <div id="schedule" class="schedule"></div>
+    <div id="schedule" class="schedule">
+      
+      <div class="card">
+        <h2>Montag</h2>
+        <div>18:00</div>
+        <div>Gaming</div>
+      </div>
+
+      <div class="card">
+        <h2>Dienstag</h2>
+        <div>18:00</div>
+        <div>Just Chatting</div>
+      </div>
+
+      <div class="card">
+        <h2>Mittwoch</h2>
+        <div>18:00</div>
+        <div>Community</div>
+      </div>
+
+      <div class="card">
+        <h2>Donnerstag</h2>
+        <div>18:00</div>
+        <div>Gaming</div>
+      </div>
+
+      <div class="card">
+        <h2>Freitag</h2>
+        <div>18:00</div>
+        <div>Special Stream</div>
+      </div>
+
+      <div class="card">
+        <h2>Samstag</h2>
+        <div>18:00</div>
+        <div>Community Games</div>
+      </div>
+
+      <div class="card">
+        <h2>Sonntag</h2>
+        <div>-</div>
+        <div>Pause</div>
+      </div>
+
+    </div>
   </section>
 </main>
 
@@ -62,6 +86,19 @@
   <p>© 2026 Dili</p>
 </footer>
 
-<script src="script.js"></script>
+<script>
+const flower = document.getElementById("modeFlower");
+
+flower.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  document.body.classList.toggle("light");
+
+  flower.style.transform = "rotate(180deg) scale(1.05)";
+  setTimeout(() => {
+    flower.style.transform = "";
+  }, 500);
+});
+</script>
+
 </body>
 </html>
