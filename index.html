@@ -20,7 +20,12 @@
 <header class="hero">
   <h1 class="name">Dili</h1>
   <p class="subtitle">Streamplan</p>
-  <p class="week-range" id="weekRange"></p>
+
+  <div class="week-container">
+    <span class="flower-icon">🌸</span>
+    <p class="week-range" id="weekRange"></p>
+    <span class="flower-icon">🌸</span>
+  </div>
 
   <div class="flower-toggle">
     <img src="blume.png" id="modeFlower" alt="">
@@ -47,14 +52,12 @@
 <script>
 /* MODE TOGGLE */
 const flower = document.getElementById("modeFlower");
-
 flower.addEventListener("click", () => {
   document.body.classList.toggle("dark");
   document.body.classList.toggle("light");
 });
 
-/* WOCHENBEREICH BERECHNEN */
-
+/* WOCHENBEREICH */
 function getWeekRange() {
   const today = new Date();
   const day = today.getDay();
@@ -80,7 +83,6 @@ function getWeekRange() {
 getWeekRange();
 
 /* STREAMPLAN */
-
 const streamplan = [
   { tag: "Montag", zeit: "18:00", titel: "Gaming" },
   { tag: "Dienstag", zeit: "18:00", titel: "Just Chatting" },
