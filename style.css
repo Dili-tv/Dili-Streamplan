@@ -5,9 +5,8 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  transition: background 0.4s ease, color 0.4s ease;
+  transition: background 0.5s ease, color 0.5s ease;
   overflow-x: hidden;
-  position: relative;
 }
 
 /* BACKGROUND */
@@ -18,7 +17,7 @@ body.dark {
 }
 
 body.light {
-  background: #ffd6eb;
+  background: #ffe4f2;
   color: #4a004e;
 }
 
@@ -46,21 +45,20 @@ body.light {
 /* FLOWER TOGGLE */
 
 .flower-toggle {
-  margin-top: 25px;
+  margin-top: 30px;
   cursor: pointer;
 }
 
 #modeFlower {
-  transition: transform 0.4s ease, fill 0.4s ease;
-  fill: #ffb7d5;
+  transition: transform 0.6s ease, filter 0.6s ease;
 }
 
 body.dark #modeFlower {
-  fill: #6a00ff;
+  filter: drop-shadow(0 0 12px #b026ff);
 }
 
 #modeFlower:hover {
-  transform: scale(1.1);
+  transform: rotate(20deg) scale(1.1);
 }
 
 /* SCHEDULE */
@@ -69,8 +67,6 @@ body.dark #modeFlower {
   max-width: 800px;
   margin: auto;
   padding: 40px 20px 100px;
-  position: relative;
-  z-index: 2;
 }
 
 .schedule {
@@ -80,7 +76,7 @@ body.dark #modeFlower {
 }
 
 .card {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.25);
   padding: 30px;
   border-radius: 20px;
   backdrop-filter: blur(15px);
@@ -91,7 +87,7 @@ body.dark #modeFlower {
 
 .today {
   border: 2px solid #b026ff;
-  animation: neonPurple 1.8s infinite alternate;
+  animation: neonPurple 2s infinite alternate;
 }
 
 @keyframes neonPurple {
@@ -103,51 +99,27 @@ body.dark #modeFlower {
   }
 }
 
-/* SOCIALS */
+/* PETAL FALLING */
 
-footer {
-  text-align: center;
-  padding: 50px 20px;
-  position: relative;
-  z-index: 2;
-}
-
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 35px;
-  margin-bottom: 20px;
-}
-
-.socials a {
-  font-size: 28px;
-}
-
-.socials a:nth-child(1) { color: #9146FF; }
-.socials a:nth-child(2) {
-  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.socials a:nth-child(3) { color: #FF0000; }
-.socials a:nth-child(4) { color: #00F2EA; }
-.socials a:nth-child(5) { color: #5865F2; }
-
-/* PAW TRAIL */
-
-.paw-bg {
+.petal {
   position: fixed;
-  width: 45px;
-  height: 45px;
-  opacity: 0.15;
+  top: -40px;
+  width: 20px;
+  height: 30px;
+  background: radial-gradient(circle at 30% 30%, #fff0f8, #ff9fcf);
+  border-radius: 50% 50% 50% 50%;
+  opacity: 0.8;
   pointer-events: none;
-  z-index: 0;
-  animation: fadePaw 6s ease forwards;
+  animation: fall linear forwards;
 }
 
-@keyframes fadePaw {
-  0% { opacity: 0; transform: scale(0.6); }
-  20% { opacity: 0.15; }
-  80% { opacity: 0.15; }
-  100% { opacity: 0; transform: scale(1.1); }
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(110vh) translateX(50px) rotate(360deg);
+    opacity: 0;
+  }
 }
