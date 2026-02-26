@@ -9,7 +9,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Süße Schrift für Dili -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -17,10 +19,9 @@
 <body class="dark">
 
 <header class="hero">
-  <h1>Dili</h1>
+  <h1 class="name">Dili</h1>
   <p class="subtitle">Streamplan</p>
 
-  <!-- BLOSSOM SWITCH -->
   <div class="flower-toggle">
     <img src="blume.png" id="modeFlower" alt="">
   </div>
@@ -28,17 +29,7 @@
 
 <main>
   <section class="schedule-wrapper">
-    <div class="schedule">
-
-      <div class="card"><h2>Montag</h2><div>18:00</div><div>Gaming</div></div>
-      <div class="card"><h2>Dienstag</h2><div>18:00</div><div>Just Chatting</div></div>
-      <div class="card"><h2>Mittwoch</h2><div>18:00</div><div>Community</div></div>
-      <div class="card"><h2>Donnerstag</h2><div>18:00</div><div>Gaming</div></div>
-      <div class="card"><h2>Freitag</h2><div>18:00</div><div>Special Stream</div></div>
-      <div class="card"><h2>Samstag</h2><div>18:00</div><div>Community Games</div></div>
-      <div class="card"><h2>Sonntag</h2><div>-</div><div>Pause</div></div>
-
-    </div>
+    <div id="schedule" class="schedule"></div>
   </section>
 </main>
 
@@ -54,16 +45,48 @@
 </footer>
 
 <script>
+/* FLOWER TOGGLE */
 const flower = document.getElementById("modeFlower");
 
 flower.addEventListener("click", () => {
   document.body.classList.toggle("dark");
   document.body.classList.toggle("light");
+});
 
-  flower.style.transform = "rotate(180deg) scale(1.05)";
-  setTimeout(() => {
-    flower.style.transform = "";
-  }, 500);
+/* STREAMPLAN */
+
+const streamplan = [
+  { tag: "Montag", zeit: "18:00", titel: "Gaming" },
+  { tag: "Dienstag", zeit: "18:00", titel: "Just Chatting" },
+  { tag: "Mittwoch", zeit: "18:00", titel: "Community" },
+  { tag: "Donnerstag", zeit: "18:00", titel: "Gaming" },
+  { tag: "Freitag", zeit: "18:00", titel: "Special Stream" },
+  { tag: "Samstag", zeit: "18:00", titel: "Community Games" },
+  { tag: "Sonntag", zeit: "-", titel: "Pause" }
+];
+
+const heute = new Date().getDay();
+const heuteIndex = heute === 0 ? 6 : heute - 1;
+
+const container = document.getElementById("schedule");
+
+streamplan.forEach((eintrag, index) => {
+  const card = document.createElement("div");
+  card.classList.add("card");
+
+  if (index === heuteIndex) {
+    card.classList.add("today");
+  } else if (index < heuteIndex) {
+    card.classList.add("past");
+  }
+
+  card.innerHTML = `
+    <h2>${eintrag.tag}</h2>
+    <div>${eintrag.zeit}</div>
+    <div>${eintrag.titel}</div>
+  `;
+
+  container.appendChild(card);
 });
 </script>
 
