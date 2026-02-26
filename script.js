@@ -1,17 +1,18 @@
-// MODE SWITCH
-const switchInput = document.getElementById("modeSwitch");
+// FLOWER TOGGLE
+const flower = document.getElementById("modeFlower");
 
-switchInput.addEventListener("change", () => {
-  if (switchInput.checked) {
-    document.body.classList.remove("dark");
-    document.body.classList.add("light");
-  } else {
-    document.body.classList.remove("light");
-    document.body.classList.add("dark");
-  }
+flower.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  document.body.classList.toggle("light");
+
+  flower.style.transform = "rotate(180deg)";
+  setTimeout(() => {
+    flower.style.transform = "";
+  }, 400);
 });
 
 // STREAMPLAN (Montag → Sonntag)
+
 const streamplan = [
   { tag: "Montag", zeit: "18:00", titel: "Gaming" },
   { tag: "Dienstag", zeit: "18:00", titel: "Just Chatting" },
