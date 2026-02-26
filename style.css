@@ -95,7 +95,38 @@ body.dark #modeFlower {
   to { box-shadow: 0 0 35px #b026ff; }
 }
 
-/* REALISTISCHE BLÜTEN */
+/* SOCIALS – KORREKT ZENTRIERT */
+
+footer {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 25px;
+}
+
+.socials a {
+  font-size: 30px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.socials a:nth-child(1) { color: #9146FF; }
+.socials a:nth-child(2) { color: #E1306C; }
+.socials a:nth-child(3) { color: #FF0000; }
+.socials a:nth-child(4) { color: #00F2EA; }
+.socials a:nth-child(5) { color: #5865F2; }
+
+.socials a:hover {
+  transform: translateY(-6px) scale(1.1);
+  filter: drop-shadow(0 0 10px currentColor);
+}
+
+/* REALISTISCHE FALLENDE BLÜTEN */
 
 .petal {
   position: fixed;
