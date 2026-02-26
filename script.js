@@ -4,15 +4,9 @@ const flower = document.getElementById("modeFlower");
 flower.addEventListener("click", () => {
   document.body.classList.toggle("dark");
   document.body.classList.toggle("light");
-
-  flower.style.transform = "rotate(180deg)";
-  setTimeout(() => {
-    flower.style.transform = "";
-  }, 400);
 });
 
-// STREAMPLAN (Montag → Sonntag)
-
+// STREAMPLAN
 const streamplan = [
   { tag: "Montag", zeit: "18:00", titel: "Gaming" },
   { tag: "Dienstag", zeit: "18:00", titel: "Just Chatting" },
@@ -45,44 +39,20 @@ streamplan.forEach((eintrag, index) => {
   container.appendChild(card);
 });
 
-// DIAGONALE KATZENPFOTEN-SPUR
+// FALLING PETALS
 
-let pawStep = 0;
+function createPetal() {
+  const petal = document.createElement("div");
+  petal.className = "petal";
 
-function createDiagonalPaw() {
+  petal.style.left = Math.random() * window.innerWidth + "px";
+  petal.style.animationDuration = (6 + Math.random() * 4) + "s";
 
-  const paw = document.createElement("div");
-  paw.className = "paw-bg";
-
-  const x = pawStep * 90;
-  const y = window.innerHeight - (pawStep * 90);
-
-  paw.style.left = x + "px";
-  paw.style.top = y + "px";
-  paw.style.transform = `rotate(${pawStep % 2 === 0 ? -25 : 25}deg)`;
-
-  paw.innerHTML = `
-    <svg viewBox="0 0 100 100" width="45" height="45">
-      <ellipse cx="30" cy="35" rx="10" ry="14" fill="black"/>
-      <ellipse cx="50" cy="25" rx="10" ry="14" fill="black"/>
-      <ellipse cx="70" cy="35" rx="10" ry="14" fill="black"/>
-      <ellipse cx="40" cy="55" rx="10" ry="14" fill="black"/>
-      <ellipse cx="60" cy="55" rx="10" ry="14" fill="black"/>
-      <path d="M35 65 Q50 85 65 65 Q70 55 50 50 Q30 55 35 65 Z" fill="black"/>
-    </svg>
-  `;
-
-  document.body.appendChild(paw);
+  document.body.appendChild(petal);
 
   setTimeout(() => {
-    paw.remove();
-  }, 6000);
-
-  pawStep++;
-
-  if (x > window.innerWidth || y < 0) {
-    pawStep = 0;
-  }
+    petal.remove();
+  }, 10000);
 }
 
-setInterval(createDiagonalPaw, 900);
+setInterval(createPetal, 600);
