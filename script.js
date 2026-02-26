@@ -11,26 +11,32 @@ switchInput.addEventListener("change", () => {
   }
 });
 
-// STREAMPLAN
+// STREAMPLAN – FESTE REIHENFOLGE MONTAG → SONNTAG
 const streamplan = [
-  { tag: "Sonntag", zeit: "-", titel: "Pause" },
   { tag: "Montag", zeit: "18:00", titel: "Gaming" },
   { tag: "Dienstag", zeit: "18:00", titel: "Just Chatting" },
   { tag: "Mittwoch", zeit: "18:00", titel: "Community" },
   { tag: "Donnerstag", zeit: "18:00", titel: "Gaming" },
   { tag: "Freitag", zeit: "18:00", titel: "Special Stream" },
-  { tag: "Samstag", zeit: "18:00", titel: "Community Games" }
+  { tag: "Samstag", zeit: "18:00", titel: "Community Games" },
+  { tag: "Sonntag", zeit: "-", titel: "Pause" }
 ];
 
-const tage = ["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"];
-const heute = tage[new Date().getDay()];
+// HEUTIGEN TAG ERMITTELN (EUROPÄISCHES FORMAT)
+const heuteIndex = new Date().getDay(); 
+// getDay(): 0 = Sonntag, 1 = Montag, ..., 6 = Samstag
+
+// Wir wandeln es um, damit Montag = 0 wird
+const angepassterIndex = heuteIndex === 0 ? 6 : heuteIndex - 1;
+
 const container = document.getElementById("schedule");
 
-streamplan.forEach(eintrag => {
+streamplan.forEach((eintrag, index) => {
+
   const card = document.createElement("div");
   card.className = "card";
 
-  if (eintrag.tag === heute) {
+  if (index === angepassterIndex) {
     card.classList.add("today");
   }
 
@@ -41,31 +47,5 @@ streamplan.forEach(eintrag => {
   `;
 
   container.appendChild(card);
+
 });
-
-// REALISTISCHE SAKURA
-function createPetal() {
-
-  const petal = document.createElement("div");
-  petal.className = "petal";
-
-  petal.style.left = Math.random() * window.innerWidth + "px";
-  petal.style.animationDuration = (8 + Math.random() * 6) + "s";
-
-  petal.innerHTML = `
-    <svg viewBox="0 0 64 64" width="34" height="34">
-      <path d="M32 5 C40 5, 45 15, 32 22 C19 15, 24 5, 32 5 Z" fill="#ffb7d5"/>
-      <path d="M32 22 C45 15, 58 28, 45 38 C35 45, 30 35, 32 22 Z" fill="#ffc8e0"/>
-      <path d="M32 22 C30 35, 19 45, 9 38 C-4 28, 19 15, 32 22 Z" fill="#ffb7d5"/>
-      <circle cx="32" cy="28" r="4" fill="#ffd166"/>
-    </svg>
-  `;
-
-  document.body.appendChild(petal);
-
-  setTimeout(() => {
-    petal.remove();
-  }, 14000);
-}
-
-setInterval(createPetal, 1200);
