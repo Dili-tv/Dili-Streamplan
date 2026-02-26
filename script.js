@@ -44,20 +44,29 @@ streamplan.forEach((eintrag, index) => {
   container.appendChild(card);
 });
 
-// HINTERGRUND PFOTEN
+// SÜSSE KATZENPFOTEN IM HINTERGRUND
 
 function createBackgroundPaw() {
+
   const paw = document.createElement("div");
   paw.className = "paw-bg";
 
   paw.innerHTML = `
-  <svg viewBox="0 0 64 64" width="40" height="40" fill="black">
-    <circle cx="20" cy="20" r="6"/>
-    <circle cx="44" cy="20" r="6"/>
-    <circle cx="16" cy="36" r="6"/>
-    <circle cx="48" cy="36" r="6"/>
-    <ellipse cx="32" cy="44" rx="12" ry="10"/>
-  </svg>
+    <svg viewBox="0 0 100 100" width="45" height="45">
+      <!-- Zehen -->
+      <ellipse cx="30" cy="35" rx="10" ry="14" fill="black"/>
+      <ellipse cx="50" cy="25" rx="10" ry="14" fill="black"/>
+      <ellipse cx="70" cy="35" rx="10" ry="14" fill="black"/>
+      <ellipse cx="40" cy="55" rx="10" ry="14" fill="black"/>
+      <ellipse cx="60" cy="55" rx="10" ry="14" fill="black"/>
+
+      <!-- Ballen -->
+      <path d="M35 65 
+               Q50 85 65 65 
+               Q70 55 50 50 
+               Q30 55 35 65 Z" 
+            fill="black"/>
+    </svg>
   `;
 
   paw.style.left = Math.random() * window.innerWidth + "px";
@@ -68,7 +77,7 @@ function createBackgroundPaw() {
 
   setTimeout(() => {
     paw.remove();
-  }, 4000);
+  }, 5000);
 }
 
-setInterval(createBackgroundPaw, 1500);
+setInterval(createBackgroundPaw, 1800);
