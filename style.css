@@ -30,15 +30,23 @@ body.light {
   align-items: center;
 }
 
-.hero h1 {
-  font-size: 72px;
+/* Süße Schrift */
+.name {
+  font-family: 'Pacifico', cursive;
+  font-size: 70px;
   margin: 0;
 }
 
+/* Streamplan dunkler & größer */
 .subtitle {
-  margin-top: 10px;
-  font-size: 20px;
-  opacity: 0.85;
+  margin-top: 15px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #4a004e;
+}
+
+body.dark .subtitle {
+  color: #2b002e;
 }
 
 /* BLOSSOM SWITCH */
@@ -50,22 +58,13 @@ body.light {
 }
 
 #modeFlower {
-  width: 55px;   /* <-- kleiner & perfekt proportioniert */
-  height: auto;
+  width: 55px;
   cursor: pointer;
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 #modeFlower:hover {
   transform: scale(1.08) rotate(5deg);
-}
-
-body.dark #modeFlower {
-  filter: drop-shadow(0 0 20px rgba(176, 38, 255, 0.6));
-}
-
-body.light #modeFlower {
-  filter: drop-shadow(0 0 12px rgba(255, 150, 200, 0.5));
 }
 
 /* SCHEDULE */
@@ -83,15 +82,36 @@ body.light #modeFlower {
 }
 
 .card {
-  background: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.3);
   padding: 30px;
   border-radius: 20px;
   backdrop-filter: blur(15px);
-  transition: 0.3s ease;
+  transition: 0.4s ease;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+/* Vergangene Tage */
+
+.past {
+  opacity: 0.4;
+  filter: blur(2px);
+}
+
+/* Aktueller Tag – Neon Lila */
+
+.today {
+  border: 2px solid #b026ff;
+  animation: neon 1.8s infinite alternate;
+}
+
+@keyframes neon {
+  from {
+    box-shadow: 0 0 10px #b026ff,
+                0 0 20px #b026ff;
+  }
+  to {
+    box-shadow: 0 0 25px #b026ff,
+                0 0 45px #b026ff;
+  }
 }
 
 /* SOCIALS */
@@ -104,7 +124,6 @@ footer {
 .socials {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 40px;
   margin-bottom: 25px;
 }
