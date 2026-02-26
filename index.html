@@ -10,7 +10,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Süße Schrift für Dili -->
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -21,6 +20,7 @@
 <header class="hero">
   <h1 class="name">Dili</h1>
   <p class="subtitle">Streamplan</p>
+  <p class="week-range" id="weekRange"></p>
 
   <div class="flower-toggle">
     <img src="blume.png" id="modeFlower" alt="">
@@ -45,13 +45,39 @@
 </footer>
 
 <script>
-/* FLOWER TOGGLE */
+/* MODE TOGGLE */
 const flower = document.getElementById("modeFlower");
 
 flower.addEventListener("click", () => {
   document.body.classList.toggle("dark");
   document.body.classList.toggle("light");
 });
+
+/* WOCHENBEREICH BERECHNEN */
+
+function getWeekRange() {
+  const today = new Date();
+  const day = today.getDay();
+  const diffToMonday = day === 0 ? -6 : 1 - day;
+
+  const monday = new Date(today);
+  monday.setDate(today.getDate() + diffToMonday);
+
+  const sunday = new Date(monday);
+  sunday.setDate(monday.getDate() + 6);
+
+  const format = (date) =>
+    date.toLocaleDateString("de-DE", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric"
+    });
+
+  document.getElementById("weekRange").textContent =
+    format(monday) + " – " + format(sunday);
+}
+
+getWeekRange();
 
 /* STREAMPLAN */
 
