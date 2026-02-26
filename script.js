@@ -53,14 +53,11 @@ function createDiagonalPaw() {
   const paw = document.createElement("div");
   paw.className = "paw-bg";
 
-  // Position diagonal berechnen
-  const x = pawStep * 80;
-  const y = window.innerHeight - (pawStep * 80);
+  const x = pawStep * 90;
+  const y = window.innerHeight - (pawStep * 90);
 
   paw.style.left = x + "px";
   paw.style.top = y + "px";
-
-  // Leichte Drehung für Natürlichkeit
   paw.style.transform = `rotate(${pawStep % 2 === 0 ? -25 : 25}deg)`;
 
   paw.innerHTML = `
@@ -70,11 +67,7 @@ function createDiagonalPaw() {
       <ellipse cx="70" cy="35" rx="10" ry="14" fill="black"/>
       <ellipse cx="40" cy="55" rx="10" ry="14" fill="black"/>
       <ellipse cx="60" cy="55" rx="10" ry="14" fill="black"/>
-      <path d="M35 65 
-               Q50 85 65 65 
-               Q70 55 50 50 
-               Q30 55 35 65 Z" 
-            fill="black"/>
+      <path d="M35 65 Q50 85 65 65 Q70 55 50 50 Q30 55 35 65 Z" fill="black"/>
     </svg>
   `;
 
@@ -86,10 +79,9 @@ function createDiagonalPaw() {
 
   pawStep++;
 
-  // Wenn wir oben angekommen sind → neu starten
   if (x > window.innerWidth || y < 0) {
     pawStep = 0;
   }
 }
 
-setInterval(createDiagonalPaw, 800);
+setInterval(createDiagonalPaw, 900);
