@@ -34,74 +34,6 @@ body.light {
 }
 
 /* =========================
-   GLITZER NUR OBEN
-   ========================= */
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 35vh; /* nur oberer Bereich */
-  pointer-events: none;
-  z-index: -1;
-  background:
-    radial-gradient(circle, rgba(255,255,255,0.9) 0%, transparent 60%) 20% 30% / 6px 6px no-repeat,
-    radial-gradient(circle, rgba(255,255,255,0.7) 0%, transparent 60%) 70% 20% / 5px 5px no-repeat,
-    radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 60%) 50% 10% / 4px 4px no-repeat;
-  animation: sparkle 5s infinite ease-in-out alternate;
-  opacity: 0.6;
-}
-
-@keyframes sparkle {
-  0% { opacity: 0.3; transform: translateY(0px); }
-  50% { opacity: 0.8; transform: translateY(-8px); }
-  100% { opacity: 0.4; transform: translateY(0px); }
-}
-
-/* =========================
-   BLÜTENSTAUB
-   ========================= */
-
-.fairy-dust {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.fairy-dust span {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: radial-gradient(circle, #fff 0%, rgba(255,255,255,0.4) 60%, transparent 100%);
-  border-radius: 50%;
-  opacity: 0.4;
-  animation: floatDust 18s linear infinite;
-}
-
-.fairy-dust span:nth-child(1) { left: 15%; animation-delay: 0s; }
-.fairy-dust span:nth-child(2) { left: 35%; animation-delay: 4s; }
-.fairy-dust span:nth-child(3) { left: 55%; animation-delay: 8s; }
-.fairy-dust span:nth-child(4) { left: 75%; animation-delay: 12s; }
-
-@keyframes floatDust {
-  0% {
-    top: -10px;
-    transform: translateX(0px);
-    opacity: 0;
-  }
-  10% { opacity: 0.5; }
-  50% { transform: translateX(20px); }
-  100% {
-    top: 100vh;
-    transform: translateX(-20px);
-    opacity: 0;
-  }
-}
-
-/* =========================
    HERO
    ========================= */
 
@@ -128,6 +60,45 @@ body::before {
 }
 
 /* =========================
+   WEEK RANGE
+   ========================= */
+
+.week-container {
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.week-range {
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.flower-icon {
+  font-size: 18px;
+}
+
+/* =========================
+   SWITCH BLOSSOM (klein!)
+   ========================= */
+
+.flower-toggle {
+  margin-top: 12px;
+}
+
+#modeFlower {
+  width: 42px;      /* wieder klein */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#modeFlower:hover {
+  transform: scale(1.08) rotate(5deg);
+}
+
+/* =========================
    SCHEDULE
    ========================= */
 
@@ -151,14 +122,10 @@ body::before {
   transition: 0.4s ease;
 }
 
-/* Vergangene Tage */
-
 .past {
   opacity: 0.4;
   filter: blur(2px);
 }
-
-/* Aktueller Tag */
 
 .today {
   border: 2px solid #b026ff;
@@ -174,4 +141,39 @@ body::before {
     box-shadow: 0 0 25px #b026ff,
                 0 0 45px #b026ff;
   }
+}
+
+/* =========================
+   SOCIALS (FIXED & CENTERED)
+   ========================= */
+
+footer {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;   /* mittig */
+  align-items: center;
+  gap: 35px;
+  margin-bottom: 20px;
+}
+
+.socials a {
+  font-size: 30px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Original Farben */
+
+.socials a:nth-child(1) { color: #9146FF; } /* Twitch */
+.socials a:nth-child(2) { color: #E1306C; } /* Instagram */
+.socials a:nth-child(3) { color: #FF0000; } /* YouTube */
+.socials a:nth-child(4) { color: #00F2EA; } /* TikTok */
+.socials a:nth-child(5) { color: #5865F2; } /* Discord */
+
+.socials a:hover {
+  transform: translateY(-6px) scale(1.1);
+  filter: drop-shadow(0 0 12px currentColor);
 }
