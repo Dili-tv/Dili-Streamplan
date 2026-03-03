@@ -60,27 +60,31 @@ body.light {
 }
 
 /* =========================
-   WEEK RANGE
+   WEEK RANGE (HORIZONTAL 🌸 DATE 🌸)
    ========================= */
 
 .week-container {
-  margin-top: 2px;
+  margin-top: 4px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .week-range {
+  margin: 0;
   font-size: 15px;
   letter-spacing: 1px;
+  white-space: nowrap;
 }
 
 .flower-icon {
   font-size: 18px;
+  line-height: 1;
 }
 
 /* =========================
-   SWITCH BLOSSOM (klein!)
+   SWITCH BLOSSOM
    ========================= */
 
 .flower-toggle {
@@ -88,7 +92,7 @@ body.light {
 }
 
 #modeFlower {
-  width: 42px;      /* wieder klein */
+  width: 42px;
   height: auto;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -122,10 +126,18 @@ body.light {
   transition: 0.4s ease;
 }
 
+.card h3 {
+  margin: 0 0 10px 0;
+}
+
+/* Vergangene Tage */
+
 .past {
   opacity: 0.4;
   filter: blur(2px);
 }
+
+/* Aktueller Tag */
 
 .today {
   border: 2px solid #b026ff;
@@ -144,7 +156,7 @@ body.light {
 }
 
 /* =========================
-   SOCIALS (FIXED & CENTERED)
+   SOCIALS
    ========================= */
 
 footer {
@@ -154,7 +166,7 @@ footer {
 
 .socials {
   display: flex;
-  justify-content: center;   /* mittig */
+  justify-content: center;
   align-items: center;
   gap: 35px;
   margin-bottom: 20px;
@@ -165,7 +177,7 @@ footer {
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Original Farben */
+/* Plattform Farben */
 
 .socials a:nth-child(1) { color: #9146FF; } /* Twitch */
 .socials a:nth-child(2) { color: #E1306C; } /* Instagram */
