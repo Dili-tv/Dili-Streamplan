@@ -7,24 +7,28 @@ body {
   font-family: 'Poppins', sans-serif;
   transition: background 0.6s ease, color 0.6s ease;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* =========================
-   ZEN WATER BACKGROUND
+   FAIRY ZEN BACKGROUND
    ========================= */
 
 body.dark {
   background:
-    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.06), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05), transparent 40%),
-    linear-gradient(180deg, #CD6889 0%, #b85c86 50%, #a44e78 100%);
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.06), transparent 40%),
+    linear-gradient(180deg,
+      #e28ab0 0%,
+      #cd6889 50%,
+      #b05585 100%);
   color: white;
 }
 
 body.light {
   background:
-    radial-gradient(circle at 30% 40%, rgba(255,255,255,0.4), transparent 40%),
-    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.3), transparent 40%),
+    radial-gradient(circle at 30% 40%, rgba(255,255,255,0.5), transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.4), transparent 40%),
     linear-gradient(180deg, #ffe6f2 0%, #ffd1ea 100%);
   color: #4a004e;
 }
@@ -44,8 +48,33 @@ body::before {
       transparent 80px
     );
   pointer-events: none;
-  z-index: -1;
+  z-index: -2;
   opacity: 0.3;
+}
+
+/* =========================
+   FAIRY SPARKLES
+   ========================= */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 60%) 20% 30% / 6px 6px no-repeat,
+    radial-gradient(circle, rgba(255,255,255,0.6) 0%, transparent 60%) 70% 60% / 5px 5px no-repeat,
+    radial-gradient(circle, rgba(255,255,255,0.7) 0%, transparent 60%) 40% 80% / 4px 4px no-repeat,
+    radial-gradient(circle, rgba(255,255,255,0.5) 0%, transparent 60%) 85% 20% / 6px 6px no-repeat;
+  animation: sparkle 6s infinite ease-in-out alternate;
+  opacity: 0.6;
+}
+
+@keyframes sparkle {
+  0% { opacity: 0.3; transform: translateY(0px); }
+  50% { opacity: 0.8; transform: translateY(-10px); }
+  100% { opacity: 0.4; transform: translateY(0px); }
 }
 
 /* =========================
@@ -74,44 +103,6 @@ body::before {
   color: #2b002e;
 }
 
-body.dark .subtitle {
-  color: #2b002e;
-}
-
-/* WEEK RANGE */
-
-.week-container {
-  margin-top: 2px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.week-range {
-  font-size: 15px;
-  letter-spacing: 1px;
-}
-
-.flower-icon {
-  font-size: 18px;
-}
-
-/* SWITCH */
-
-.flower-toggle {
-  margin-top: 12px;
-}
-
-#modeFlower {
-  width: 45px;
-  cursor: pointer;
-  transition: transform 0.4s ease;
-}
-
-#modeFlower:hover {
-  transform: scale(1.08) rotate(5deg);
-}
-
 /* =========================
    SCHEDULE
    ========================= */
@@ -136,33 +127,6 @@ body.dark .subtitle {
   transition: 0.4s ease;
 }
 
-/* Wochentag */
-
-.card h3 {
-  margin: 0;
-  padding-bottom: 10px;
-  margin-bottom: 12px;
-  font-size: 20px;
-  font-weight: 600;
-  position: relative;
-}
-
-/* Trennlinie */
-
-.card h3::after {
-  content: "";
-  display: block;
-  height: 2px;
-  width: 100%;
-  margin-top: 8px;
-  border-radius: 2px;
-  background: linear-gradient(
-    to right,
-    rgba(176, 38, 255, 0.7),
-    rgba(255, 255, 255, 0.4)
-  );
-}
-
 /* Vergangene Tage */
 
 .past {
@@ -170,7 +134,7 @@ body.dark .subtitle {
   filter: blur(2px);
 }
 
-/* Aktueller Tag Neon */
+/* Aktueller Tag */
 
 .today {
   border: 2px solid #b026ff;
@@ -186,36 +150,4 @@ body.dark .subtitle {
     box-shadow: 0 0 25px #b026ff,
                 0 0 45px #b026ff;
   }
-}
-
-/* =========================
-   SOCIALS
-   ========================= */
-
-footer {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 35px;
-  margin-bottom: 20px;
-}
-
-.socials a {
-  font-size: 28px;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.socials a:nth-child(1) { color: #9146FF; }
-.socials a:nth-child(2) { color: #E1306C; }
-.socials a:nth-child(3) { color: #FF0000; }
-.socials a:nth-child(4) { color: #00F2EA; }
-.socials a:nth-child(5) { color: #5865F2; }
-
-.socials a:hover {
-  transform: translateY(-6px) scale(1.1);
-  filter: drop-shadow(0 0 10px currentColor);
 }
