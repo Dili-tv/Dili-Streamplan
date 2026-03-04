@@ -226,3 +226,48 @@ body::after {
     transform: translateY(0px);
   }
 }
+
+/* =========================
+   SAKURA BLÜTENBLÄTTER
+   ========================= */
+
+.sakura {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.sakura span {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #ffd6ea;
+  border-radius: 60% 40% 60% 40%;
+  opacity: 0.7;
+  filter: blur(0.5px);
+  animation: sakuraFall linear infinite;
+}
+
+.sakura span:nth-child(1){ left:10%; animation-duration:18s; animation-delay:0s;}
+.sakura span:nth-child(2){ left:30%; animation-duration:22s; animation-delay:4s;}
+.sakura span:nth-child(3){ left:55%; animation-duration:20s; animation-delay:8s;}
+.sakura span:nth-child(4){ left:75%; animation-duration:24s; animation-delay:2s;}
+.sakura span:nth-child(5){ left:90%; animation-duration:26s; animation-delay:6s;}
+
+@keyframes sakuraFall{
+  0%{
+    top:-20px;
+    transform:rotate(0deg) translateX(0px);
+    opacity:0;
+  }
+  10%{opacity:0.7;}
+  50%{
+    transform:rotate(180deg) translateX(30px);
+  }
+  100%{
+    top:110vh;
+    transform:rotate(360deg) translateX(-30px);
+    opacity:0;
+  }
+}
