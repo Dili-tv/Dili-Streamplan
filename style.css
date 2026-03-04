@@ -84,25 +84,6 @@ body.light {
 }
 
 /* =========================
-   SWITCH BLOSSOM
-   ========================= */
-
-.flower-toggle {
-  margin-top: 12px;
-}
-
-#modeFlower {
-  width: 42px;
-  height: auto;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-#modeFlower:hover {
-  transform: scale(1.08) rotate(5deg);
-}
-
-/* =========================
    SCHEDULE
    ========================= */
 
@@ -339,3 +320,4 @@ body::after {
   opacity:0.6;
   margin-top:8px;
 }
+
