@@ -63,3 +63,22 @@ function createPetal() {
 }
 
 setInterval(createPetal, 900);
+
+/* =========================
+   TWITCH LIVE STATUS
+   ========================= */
+
+async function checkTwitchLive(){
+  try{
+    const response = await fetch("https://decapi.me/twitch/live/dili");
+    const text = await response.text();
+
+    if(text.includes("online")){
+      document.getElementById("liveBanner").style.display = "block";
+    }
+  }catch(e){
+    console.log("Twitch Status konnte nicht geladen werden");
+  }
+}
+
+checkTwitchLive();
