@@ -343,3 +343,22 @@ body::after {
   }
 
 }
+
+/* =========================
+   MOBILE LAYOUT FIX
+   ========================= */
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+}
+
+.schedule-wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
