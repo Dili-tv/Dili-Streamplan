@@ -26,14 +26,6 @@ body.dark {
   color: white;
 }
 
-body.light {
-  background:
-    radial-gradient(circle at 30% 40%, rgba(255,255,255,0.5), transparent 40%),
-    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.4), transparent 40%),
-    linear-gradient(180deg, #ffe6f2 0%, #ffd1ea 100%);
-  color: #4a004e;
-}
-
 /* =========================
    HERO
    ========================= */
@@ -363,4 +355,5 @@ main {
   max-width: 800px;
   margin: auto;
 }
+
 
