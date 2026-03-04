@@ -154,9 +154,37 @@ const streamplan = [
     ]
   },
 
-  { tag: "Samstag", streams: [] },
-  { tag: "Sonntag", streams: [] }
-];;
+ {
+  tag: "Samstag",
+  streams: [
+    {
+      zeit: "09:00",
+      titel: "Just Chatting",
+      bild: "https://static-cdn.jtvnw.net/ttv-boxart/509658-144x192.jpg"
+    },
+    {
+      zeit: "14:00",
+      titel: "GTA V",
+      bild: "https://static-cdn.jtvnw.net/ttv-boxart/32982-144x192.jpg"
+    }
+  ]
+},
+
+{
+  tag: "Sonntag",
+  streams: [
+    {
+      zeit: "09:00",
+      titel: "Just Chatting",
+      bild: "https://static-cdn.jtvnw.net/ttv-boxart/509658-144x192.jpg"
+    },
+    {
+      zeit: "14:00",
+      titel: "GTA V",
+      bild: "https://static-cdn.jtvnw.net/ttv-boxart/32982-144x192.jpg"
+    }
+  ]
+}
 
 const heute = new Date().getDay();
 const heuteIndex = heute === 0 ? 6 : heute - 1;
@@ -203,5 +231,6 @@ streamplan.forEach((eintrag, index) => {
 
 </body>
 </html>
+
 
 
