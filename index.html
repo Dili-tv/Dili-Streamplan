@@ -98,14 +98,63 @@ function getWeekRange() {
 getWeekRange();
 
 const streamplan = [
-  { tag: "Montag", zeit: "Start: 10:00 Uhr", titel: "Co-Working, GTA RP" },
-  { tag: "Dienstag", zeit: "Start: 10:00 Uhr", titel: "NEUES GAME: Die Legende von Khiimori" },
-  { tag: "Mittwoch", zeit: "Start: 10:00 Uhr", titel: "Die Legende von Khiimori, GTA RP" },
-  { tag: "Donnerstag", zeit: " Start: 10:00 Uhr", titel: "Die Legende von Khiimori, GTA RP" },
-  { tag: "Freitag", zeit: "Start: 09:00 Uhr", titel: "GTA RP" },
-  { tag: "Samstag", zeit: "Start: 09:00 Uhr", titel: "GTA RP" },
-  { tag: "Sonntag", zeit: "Start: 09:00 Uhr", titel: "Ab 12:00 Reanimal mit Moyanka" }
-];
+  {
+    tag: "Montag",
+    streams: [
+      {
+        zeit: "18:00",
+        titel: "Just Chatting",
+        bild: "https://static-cdn.jtvnw.net/ttv-boxart/509658-144x192.jpg"
+      }
+    ]
+  },
+
+  {
+    tag: "Dienstag",
+    streams: [
+      {
+        zeit: "19:00",
+        titel: "GTA V",
+        bild: "https://static-cdn.jtvnw.net/ttv-boxart/32982-144x192.jpg"
+      }
+    ]
+  },
+
+  {
+    tag: "Mittwoch",
+    streams: []
+  },
+
+  {
+    tag: "Donnerstag",
+    streams: [
+      {
+        zeit: "14:00",
+        titel: "Just Chatting",
+        bild: "https://static-cdn.jtvnw.net/ttv-boxart/509658-144x192.jpg"
+      },
+      {
+        zeit: "15:00",
+        titel: "GTA V",
+        bild: "https://static-cdn.jtvnw.net/ttv-boxart/32982-144x192.jpg"
+      }
+    ]
+  },
+
+  {
+    tag: "Freitag",
+    streams: [
+      {
+        zeit: "18:00",
+        titel: "Art Stream",
+        bild: "https://static-cdn.jtvnw.net/ttv-boxart/509660-144x192.jpg"
+      }
+    ]
+  },
+
+  { tag: "Samstag", streams: [] },
+  { tag: "Sonntag", streams: [] }
+];;
 
 const heute = new Date().getDay();
 const heuteIndex = heute === 0 ? 6 : heute - 1;
@@ -133,11 +182,3 @@ streamplan.forEach((eintrag, index) => {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
