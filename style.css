@@ -321,3 +321,25 @@ body::after {
   margin-top:8px;
 }
 
+/* =========================
+   MOBILE FIX (kein Resize)
+   ========================= */
+
+@media (max-width: 700px){
+
+  body{
+    overflow-x:hidden;
+  }
+
+  .schedule-wrapper{
+    width:100%;
+    max-width:800px;
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  .card{
+    width:100%;
+  }
+
+}
