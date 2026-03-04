@@ -303,3 +303,39 @@ body::after {
   }
 }
 
+/* =========================
+   STREAM ITEMS
+   ========================= */
+
+.stream-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:10px;
+}
+
+.stream-thumb{
+  width:50px;
+  height:65px;
+  border-radius:8px;
+  object-fit:cover;
+}
+
+.stream-info{
+  display:flex;
+  flex-direction:column;
+}
+
+.stream-time{
+  font-weight:600;
+}
+
+.stream-title{
+  font-size:14px;
+  opacity:0.9;
+}
+
+.no-stream{
+  opacity:0.6;
+  margin-top:8px;
+}
