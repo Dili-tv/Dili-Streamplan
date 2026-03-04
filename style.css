@@ -271,3 +271,34 @@ body::after {
     opacity:0;
   }
 }
+
+/* =========================
+   TWITCH LIVE BANNER
+   ========================= */
+
+.live-banner {
+  display: none;
+  margin-top: 20px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+  color: white;
+  text-align: center;
+  animation: liveGlow 2s infinite alternate;
+}
+
+.live-banner a{
+  color: white;
+  text-decoration: underline;
+}
+
+@keyframes liveGlow{
+  from{
+    box-shadow:0 0 10px #ff2a6d;
+  }
+  to{
+    box-shadow:0 0 25px #ff2a6d;
+  }
+}
