@@ -1,11 +1,3 @@
-// FLOWER TOGGLE
-const flower = document.getElementById("modeFlower");
-
-flower.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  document.body.classList.toggle("light");
-});
-
 // STREAMPLAN (Montag → Sonntag)
 
 const streamplan = [
@@ -82,3 +74,4 @@ async function checkTwitchLive(){
 }
 
 checkTwitchLive();
+
