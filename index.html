@@ -4,9 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dili | Streamplan</title>
-<div id="liveBanner" class="live-banner">
-  🔴 LIVE auf Twitch – <a href="https://www.twitch.tv/dili" target="_blank">Jetzt zuschauen</a>
-</div>
 
 <link rel="stylesheet" href="style.css">
 
@@ -19,6 +16,11 @@
 </head>
 
 <body class="dark">
+
+<div id="liveBanner" class="live-banner">
+🔴 LIVE auf Twitch – <a href="https://www.twitch.tv/dili" target="_blank">Jetzt zuschauen</a>
+</div>
+  
 <div class="sakura">
   <span></span>
   <span></span>
@@ -161,24 +163,44 @@ const heuteIndex = heute === 0 ? 6 : heute - 1;
 const container = document.getElementById("schedule");
 
 streamplan.forEach((eintrag, index) => {
+
   const card = document.createElement("div");
   card.classList.add("card");
 
-  if (index === heuteIndex) {
-    card.classList.add("today");
-  } else if (index < heuteIndex) {
-    card.classList.add("past");
+  if (index === heuteIndex) card.classList.add("today");
+  else if (index < heuteIndex) card.classList.add("past");
+
+  let streamsHTML = "";
+
+  if (eintrag.streams.length === 0) {
+    streamsHTML = `<div class="no-stream">Kein Stream</div>`;
+  } else {
+
+    eintrag.streams.forEach(stream => {
+      streamsHTML += `
+        <div class="stream-item">
+          <img src="${stream.bild}" class="stream-thumb">
+          <div class="stream-info">
+            <div class="stream-time">${stream.zeit}</div>
+            <div class="stream-title">${stream.titel}</div>
+          </div>
+        </div>
+      `;
+    });
+
   }
 
   card.innerHTML = `
     <h3>${eintrag.tag}</h3>
-    <div>${eintrag.zeit}</div>
-    <div>${eintrag.titel}</div>
+    ${streamsHTML}
   `;
 
   container.appendChild(card);
+
 });
+  
 </script>
 
 </body>
 </html>
+
