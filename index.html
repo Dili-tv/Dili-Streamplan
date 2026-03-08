@@ -93,11 +93,7 @@ getWeekRange();
 const streamplan = [
   {
     tag: "Montag",
-    streams: [
-      {
-        zeit: "10:00 Uhr",
-        titel: "Just Chatting",
-        bild: "https://static-cdn.jtvnw.net/ttv-boxart/509658-144x192.jpg"
+    streams: [OFF DAY]
       }
     ]
   },
@@ -106,30 +102,51 @@ const streamplan = [
     tag: "Dienstag",
     streams: [
       {
-        zeit: "10:00 Uhr",
-        titel: "Just Chatting",
+        zeit: "08:00 Uhr",
+        titel: "JUST CHATTING",
         bild: "https://static-cdn.jtvnw.net/ttv-boxart/509658-144x192.jpg"
+      },
+      {
+        zeit: "10:00 Uhr",
+        titel: "POKOPIA",
+        bild: "https://static-cdn.jtvnw.net/ttv-boxart/1329153872_IGDB-144x192.jpg"
       }
     ]
   },
 
   {
     tag: "Mittwoch",
-    streams: []
+    streams: [
+      {
+        zeit: "08:00 Uhr",
+        titel: "JUST CHATTING",
+        bild: "https://static-cdn.jtvnw.net/ttv-boxart/509658-144x192.jpg"
+      },
+      {
+        zeit: "11:00 Uhr",
+        titel: "NUZLOCKE mit Feli",
+        bild: "https://static-cdn.jtvnw.net/ttv-boxart/13332-144x192.jpg"
+      },
+      {
+        zeit: "16:00 Uhr",
+        titel: "GTA RP",
+        bild: "https://static-cdn.jtvnw.net/ttv-boxart/32982_IGDB-144x192.jpg"
+      }
+    ]
   },
 
   {
     tag: "Donnerstag",
     streams: [
       {
-        zeit: "12:00 Uhr",
-        titel: "Just Chatting",
+        zeit: "09:00 Uhr",
+        titel: "JUST CHATTING",
         bild: "https://static-cdn.jtvnw.net/ttv-boxart/509658-144x192.jpg"
       },
       {
-        zeit: "14:00 Uhr",
-        titel: "Die Legende von Khiimori",
-        bild: "https://static-cdn.jtvnw.net/ttv-boxart/1017980063_IGDB-144x192.jpg"
+        zeit: "11:00 Uhr",
+        titel: "FRÜHSTÜCK",
+        bild: "https://static-cdn.jtvnw.net/ttv-boxart/509667-144x192.jpg"
       }
     ]
   },
@@ -138,14 +155,9 @@ const streamplan = [
     tag: "Freitag",
      streams: [
     {
-      zeit: "09:00 Uhr",
-      titel: "Just Chatting",
+      zeit: "08:00 Uhr",
+      titel: "JUST CHATTING",
       bild: "https://static-cdn.jtvnw.net/ttv-boxart/509658-144x192.jpg"
-    },
-    {
-        zeit: "10:00 Uhr",
-        titel: "Nuzlocke mit Feli",
-        bild: "https://static-cdn.jtvnw.net/ttv-boxart/13332-144x192.jpg"
       }
     ]
   },
@@ -154,8 +166,8 @@ const streamplan = [
   tag: "Samstag",
   streams: [
     {
-      zeit: "09:00 Uhr",
-      titel: "Just Chatting",
+      zeit: "08:00 / 09:00 Uhr",
+      titel: "JUST CHATTING",
       bild: "https://static-cdn.jtvnw.net/ttv-boxart/509658-144x192.jpg"
     }
   ]
@@ -165,14 +177,9 @@ const streamplan = [
   tag: "Sonntag",
   streams: [
     {
-      zeit: "09:00 Uhr",
-      titel: "Just Chatting",
+      zeit: "08:00 / 09:00 Uhr",
+      titel: "JUST CHATTING",
       bild: "https://static-cdn.jtvnw.net/ttv-boxart/509658-144x192.jpg"
-    },
-    {
-      zeit: "12:00 Uhr",
-      titel: "REANIMAL mit Moyanka",
-      bild: "https://static-cdn.jtvnw.net/ttv-boxart/1840896223_IGDB-144x192.jpg"
     }
   ]
 }
@@ -224,6 +231,7 @@ streamplan.forEach((eintrag, index) => {
 
 </body>
 </html>
+
 
 
 
