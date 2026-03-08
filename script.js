@@ -23,11 +23,11 @@ streamplan.forEach((eintrag, index) => {
     card.classList.add("today");
   }
 
-  card.innerHTML = `
-    <h2>${eintrag.tag}</h2>
-    <div>${eintrag.zeit}</div>
-    <div>${eintrag.titel}</div>
-  `;
+card.innerHTML = `
+  <h2>${eintrag.tag}</h2>
+  <div class="day-date">${eintrag.datum}</div>
+  ${streamsHTML}
+`;
 
   container.appendChild(card);
 });
@@ -74,4 +74,5 @@ async function checkTwitchLive(){
 }
 
 checkTwitchLive();
+
 
