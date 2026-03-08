@@ -364,6 +364,20 @@ main {
   margin: auto;
 }
 
+/* =========================
+   HERZ PUNKT ÜBER DEM I
+   ========================= */
 
+.heart-i{
+  position:relative;
+}
 
-
+.heart-i::after{
+  content:"❤";
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:-12px;
+  font-size:12px;
+  color:#ff4fa3;
+}
