@@ -223,10 +223,11 @@ streamplan.forEach((eintrag, index) => {
 
   }
 
-  card.innerHTML = `
-    <h3>${eintrag.tag}</h3>
-    ${streamsHTML}
-  `;
+card.innerHTML = `
+  <h3>${eintrag.tag}</h3>
+  <div class="day-date">${eintrag.datum}</div>
+  ${streamsHTML}
+`;
 
   container.appendChild(card);
 
@@ -236,6 +237,7 @@ streamplan.forEach((eintrag, index) => {
 
 </body>
 </html>
+
 
 
 
