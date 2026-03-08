@@ -363,3 +363,10 @@ main {
   max-width: 800px;
   margin: auto;
 }
+
+.day-date{
+  font-size:13px;
+  opacity:0.75;
+  margin-bottom:8px;
+  letter-spacing:0.5px;
+}
