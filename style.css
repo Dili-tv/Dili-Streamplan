@@ -106,8 +106,8 @@ html {
 /* Vergangene Tage */
 
 .past {
-  opacity: 0.4;
-  filter: blur(2px);
+  opacity: 0.6;
+  filter: blur(0.6px);
 }
 
 /* Aktueller Tag */
@@ -381,3 +381,4 @@ main {
   font-size:12px;
   color:#ff4fa3;
 }
+
