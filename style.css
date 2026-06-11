@@ -16,15 +16,15 @@ body {
 
 html {
   background:
-    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.06), transparent 40%),
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.10), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08), transparent 40%),
     linear-gradient(
-  180deg,
-  #f3b5d0 0%,
-  #d97baa 35%,
-  #ba679a 70%,
-  #8f5fa8 100%
-);
+      180deg,
+      #f3b5d0 0%,
+      #d97baa 35%,
+      #ba679a 70%,
+      #8f5fa8 100%
+    );
   color: white;
 }
 
@@ -48,10 +48,13 @@ html {
 
 .subtitle {
   font-family: 'Playfair Display', serif;
-  font-size: 36px;
+  font-size: 38px;
   font-weight: 700;
   margin: 4px 0 2px 0;
   color: #2b002e;
+
+  text-shadow:
+    0 2px 12px rgba(255,255,255,0.15);
 }
 
 /* =========================
@@ -141,12 +144,15 @@ html {
 
 @keyframes neon {
   from {
-    box-shadow: 0 0 10px #b026ff,
-                0 0 20px #b026ff;
+    box-shadow:
+      0 0 10px rgba(176,38,255,0.5),
+      0 0 20px rgba(176,38,255,0.3);
   }
+
   to {
-    box-shadow: 0 0 25px #b026ff,
-                0 0 45px #b026ff;
+    box-shadow:
+      0 0 20px rgba(176,38,255,0.8),
+      0 0 40px rgba(176,38,255,0.5);
   }
 }
 
@@ -188,22 +194,6 @@ footer {
 /* =========================
    GLITZER SCHIMMER BACKGROUND
    ========================= */
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-
-  body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  transition: background 0.6s ease, color 0.6s ease;
-  position: relative;
-  overflow-x: hidden;
-  z-index: 1;
-}
 
   background:
     radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 60%) 15% 25% / 6px 6px no-repeat,
