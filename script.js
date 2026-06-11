@@ -18,6 +18,9 @@ const container = document.getElementById("schedule");
 streamplan.forEach((eintrag, index) => {
   const card = document.createElement("div");
   card.className = "card";
+  if(index === 6){
+  card.classList.add("sunday");
+}
 
   if (index === angepassterIndex) {
     card.classList.add("today");
