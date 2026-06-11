@@ -88,16 +88,19 @@ html {
 .schedule-wrapper {
   max-width: 800px;
   margin: auto;
-  padding: 25px 20px 80px;
+  padding: 25px 10px 80px;
 }
 
 .schedule {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 12px;
+  justify-items: center;
 }
 
 .card {
+  max-width: 340px;
+}
   background: linear-gradient(
     135deg,
     rgba(255,255,255,0.28),
@@ -406,5 +409,6 @@ main {
 .sunday {
   grid-column: 1 / -1;
   justify-self: center;
-  width: 380px;
+  max-width: 340px;
+  width: 100%;
 }
