@@ -217,8 +217,11 @@ streamplan.forEach((eintrag, index) => {
   }
 
 card.innerHTML = `
-  <h3>${eintrag.tag}</h3>
-  <div class="day-date">${eintrag.datum}</div>
+  <h3 class="day-header">
+    ${eintrag.tag}
+    <span class="separator">│</span>
+    <span class="day-date">${eintrag.datum}</span>
+  </h3>
   ${streamsHTML}
 `;
 
