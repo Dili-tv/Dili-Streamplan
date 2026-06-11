@@ -92,15 +92,34 @@ html {
 }
 
 .card {
-  background: rgba(255,255,255,0.25);
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.28),
+    rgba(255,255,255,0.12)
+  );
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  border: 1px solid rgba(255,255,255,0.35);
+
+  border-radius: 22px;
+
   padding: 22px;
-  border-radius: 18px;
-  backdrop-filter: blur(15px);
-  transition: 0.4s ease;
+
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.08),
+    inset 0 1px 1px rgba(255,255,255,0.4);
+
+  transition: all 0.3s ease;
 }
 
-.card h3 {
-  margin: 0 0 10px 0;
+.card:hover{
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.12),
+    inset 0 1px 1px rgba(255,255,255,0.5);
 }
 
 /* Vergangene Tage */
