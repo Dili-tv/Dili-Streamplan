@@ -405,6 +405,7 @@ main {
 
 .sunday{
   grid-column: 1 / -1;
-  width: calc(50% - 8px);
+  max-width: 320px;
+  width: 100%;
   justify-self: center;
 }
