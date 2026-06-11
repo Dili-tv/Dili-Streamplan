@@ -403,9 +403,8 @@ main {
   letter-spacing:0.5px;
 }
 
-.sunday{
+.sunday {
   grid-column: 1 / -1;
-  max-width: 320px;
-  width: 100%;
   justify-self: center;
+  width: 380px;
 }
